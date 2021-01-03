@@ -1,0 +1,2677 @@
+# Resource page: https://www.spigotmc.org/resources/authors/315463/
+# Discord: https://discord.gg/B4MAJVk
+# 
+# If you encounter any issues, please report them
+# to discord support server or via pm.
+# Bugs or issues are mostly fixed within hours.
+# 
+# 
+# Here you can edit the whole GUI.
+# You can set GUI titles, the size and
+# item names, lores, materials and slots.
+# Don't remove any values or keys.
+# 
+# You also can add new items to your GUI.
+# This can be done under gui.<GUI>.s.<YourItemName>
+# The name needs to be unique in this section.
+# Example:
+# 
+# gui:
+#   lands:
+#     title: '&8Your Lands'
+#     size: 27
+#     s:
+#       close:
+#         name: '&cClose'
+#         lore:
+#         - '&7Close this menu.'
+#         - ' '
+#         - '&8- &7You can open it again'
+#         - '  &7with &8/&3Lands menu&7.'
+#         material: 'RED_STAINED_GLASS_PANE'
+#         slot: 9
+# 
+# Please note: You need to set all values
+# otherwise Lands will auto generate values.
+# Also you can't set items where list items
+# are configured. Means if for example the
+# list in the Lands GUI goes from slot
+# 10 - 12 you can set any items with
+# the slot 10, 11, 12. They will be ignored.
+# 
+# 
+# You also can apply new placeholders.
+# This can be done under gui.<GUI>.p.<YourItemName>
+# The name needs to be unique in this section.
+# Example:
+# 
+# gui:
+#   lands:
+#     p:
+#       placeholder_1:
+#       material: 'GRAY_STAINED_GLASS_PANE'
+#       from: 1
+#       to: 9
+# 
+# Please note: You need to set all values
+# otherwise Lands will auto generate values.
+# Also you can't set items where list items
+# are configured. Means if for example the
+# list in the Lands GUI goes from slot
+# 10 - 12 you can set any items with
+# the slot 10, 11, 12. They will be ignored.
+# Added enabled: false to a item to disable it.
+# You can set every item as a custom head:
+# Visit /https://minecraft-heads.com/custom-heads
+# Then copy the 'value:' and paste it at 'material:'
+# 
+# 
+# If you encounter any issues or you simply have
+# some questions, contact me via PM or Discord.
+# Discord: https://discord.gg/B4MAJVk
+
+
+general:
+  wYes: '&a✔'
+  wNo: '&c✘'
+  none: '&c无'
+  now: '&a现在'
+  enabled: '&a已启用'
+  disabled: '&c已禁用'
+  unlimited: '&a无限'
+  previous: '&8上一个'
+  offline: '&c离线'
+  role:
+    owner: '&4领主'
+    admin: '&c管理员'
+    member: '&e成员'
+    visitor: '&7游客'
+  inbox-filter:
+    all: '&a全部邮件'
+    members: '&e关于成员'
+    economy: '&c关于经济'
+    war: '&4关于战争'
+  war:
+    defenders: '&a捍卫者'
+    attackers: '&c攻击者'
+    name:
+      land: '&2城镇 '
+  all: '&a全部'
+physical-Item:
+  claim-block:
+    name: '&申领区块'
+    lore:
+    - '&7您可以在荒野放置此方块'
+    - '&7然后申领区块'
+    - ' '
+    - '&7领主:&3 {owner}'
+    material: GRASS_BLOCK
+  selection:
+    name: '&e申领工具'
+    lore:
+    - '&7使用此工具框选区块并申领：'
+    - '&8/&3Lands claim'
+    material: GOLDEN_HOE
+skull:
+  role:
+    owner: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMzExYTRmYjljNDkzODliNGY0NThjMjllOTY4MzI0YzU4MjNiOGE5OWVhZGUxNzQ3ODY2Yzk1YjA2NGEifX19
+    admin: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UzZmVhODhlMmI4NWNjZGZiMWIzODcyOTgyZWFlMTY0ODlhODRjNjgxYmQ5ZmU0ZmU5YmM4YmNjMmU1In19fQ==
+    member: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjFhZGZkZjA3MTE3NWFkYWQ2NDRmZTRiM2E5NzMxYWM2YThmYTQ3NTExNjJlODEzOGM4OTlmYmFhNWZmMGI5In19fQ==
+    visitor: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+  area:
+    default: DARK_OAK_FENCE
+    sub: OAK_FENCE
+gui:
+  main:
+    title: '&0主菜单'
+    size: 27
+    s:
+      lands:
+        name: '&8> &2我的城镇'
+        lore:
+        - '&7查看您的城镇'
+        - ' '
+        - '  &7包括您自己的'
+        - '  &7和您所加入的'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 11
+      all-lands:
+        name: '&8> &b服务器操作'
+        lore:
+        - '&7查看服务器中所有的城镇'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 13
+      invites:
+        name: '&8> &6邀请'
+        lore:
+        - '&7查看您收到的邀请'
+        material: WRITABLE_BOOK
+        slot: 15
+      close:
+        name: '&c关闭'
+        lore:
+        - ' '
+        - '&8- &7再次开启使用： &8/&3Lands menu&7'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+        enabled: true
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+    f:
+      limitation:
+        name: '&8> &6关于我'
+        lore:
+        - ' '
+        - '&7+ 最多可以创造&3 {ownlands} &7个城镇.'
+        - ' '
+        - '&7+ 每个城镇最多&3 {chunks} &7个区块.'
+        - ' '
+        - '&7+ 在您所属的每个城镇,您可以贡献 &3{support-chunks} &7个区块'
+        - ' '
+        - '&7+ 最多可以加入&3 {lands} &7个城镇.'
+        - ' '
+        - '&7+ 每个城镇最多&3 {members} &7名成员.'
+        - ' '
+        material: PLAYER_HEAD
+        slot: 17
+  player_lands:
+    title: '&0您的城镇'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7返回上一页:&9 {previous}'
+        - ' '
+        - '&8- &7当前:&3 {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7进入下一页:&9 {next}'
+        - ' '
+        - '&8- &7当前:&3 {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+        - '&7您是这个城镇的一员.'
+        - ' '
+        - '&7区块:&3 {chunks} &7/&c {max-chunks}'
+        - ' '
+        - '&9右键查看城镇信息'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
+        from: 10
+        to: 18
+      own-land:
+        name: '&2{land}'
+        lore:
+        - '&7您拥有这个城镇.'
+        - ' '
+        - '&7区域:&3 {chunks} &7/&c {max-chunks}'
+        - ' '
+        - '&9右键查看城镇信息'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 18
+      no-land:
+        name: '&c这里没有任何城镇'
+        lore:
+        - '&8- &7创造自己的城镇:'
+        - '  &8/&3Lands create &8<&3城镇名称&8>'
+        - ' '
+        - '&8- &7让好朋友邀请您:'
+        - '  &8/&3Lands trust {player}'
+        material: OAK_SIGN
+        from: 10
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  land:
+    title: '&0{land}'
+    size: 45
+    s:
+      information:
+        name: '&6城镇信息'
+        lore:
+        - '&7在这里您可以查看'
+        - '&7一些关于城镇的详细信息'
+        - '&7记录城镇发生的所有事情'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      trusted-players:
+        name: '&8> &6城镇成员'
+        lore:
+        - '&7查看受信任的成员'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 14
+      invites:
+        name: '&8> &6邀请'
+        lore:
+        - ' '
+        - '&7撤消已发送的邀请'
+        - '&7或查看一些关于他们的信息'
+        material: WRITABLE_BOOK
+        slot: 15
+      management:
+        name: '&8> &6管理'
+        lore:
+        - '&7管理您的城镇.'
+        - '&7您可以信任玩家, 设置角色,'
+        - '&7编辑城镇设置以及税收.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 29
+      various:
+        name: '&8> &6城镇名和进入消息'
+        lore:
+        - '&7重命名城镇或更改加入消息'
+        material: BEACON
+        slot: 35
+    f:
+      land-settings:
+        name: '&8> &6城镇设置'
+        lore:
+        - '&7编辑{area}中的常规设置'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 31
+      roles:
+        name: '&8> &6角色'
+        lore:
+        - '&7查看{area}中的角色'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 32
+      taxes:
+        name: '&8> &6税收'
+        lore:
+        - '&7查看{area}中的税收'
+        material: GOLD_INGOT
+        slot: 33
+      areas:
+        name: '&8> &6区域'
+        lore:
+        - '&7查看城镇中的所有区域'
+        - '&7您也可以创建新的区域'
+        - ' '
+        - '&7区域:&3 {areas} &7/&c {max-areas}'
+        - '&7Claims:&3 {chunks} &7/&c {max-chunks}'
+        material: OAK_FENCE
+        slot: 13
+      inbox:
+        name: '&8> &6收件箱 &8(&e{amount}&8)'
+        lore:
+        - ' '
+        - '{inbox}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJmM2ZjZGNjZmZkOTYzZTQzMzQ4MTgxMDhlMWU5YWUzYTgwNTY2ZDBkM2QyZDRhYjMwNTFhMmNkODExMzQ4YyJ9fX0=
+        slot: 16
+      stats:
+        name: '&8> &6统计信息'
+        lore:
+        - '&7区块数量: {0} / {1} &7+ 0 &8(&7联盟&8)'
+        - '&7成员数量: {2} / {3}'
+        - ' '
+        - '&7经济'
+        - '&8- &7城镇'
+        - '  &7存款: {4}T'
+        - '  &7申领下一个区块的价格: {5}T'
+        - '  &7Upkeep of&c ${6} &7in:'
+        - '  &7{7}'
+        - ' '
+        - '&8- &4您'
+        - '  &7存款: {8}T'
+        - '  &7在{10}内需要支付&c {9}T &7的税'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
+        slot: 17
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 30
+        to: 30
+    a:
+      failure_teleport_permission:
+        name: '&4Denied: &cPermission'
+        lore:
+        - '&cYou''re not allowed to'
+        - '&cteleport to any land spawn.'
+        - ' '
+        - '&8Permission:'
+        - '&8{permission}'
+      failure_no-spawn:
+        name: '&4Failure: &cNo Spawn set'
+        lore:
+        - '&7This land has no spawn'
+        - '&7set yet. They need to'
+        - '&7set a land spawn first:'
+        - ' '
+        - '&7Execute &8/&3Lands setspawn'
+        - '&7to set the lands spawn.'
+  land_areas:
+    title: '&0区域'
+    size: 36
+    s: {}
+    f:
+      create:
+        name: '&a新建区域'
+        lore:
+        - '&7创建一个新的区域'
+        - ' '
+        - '&7剩余:&3 {areas} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        slot: 32
+      delete:
+        name: '&c删除区域'
+        lore:
+        - '&7删除一个区域'
+        - ' '
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7返回上一页:&9 {previous}'
+        - ' '
+        - '&8- &7当前:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7进入下一页:&9 {next}'
+        - ' '
+        - '&8- &7当前:&3 {current}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6{area}'
+        lore:
+        - '&7打开关于此区域的菜单'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      area-setup:
+        name: '&c等待规划:&6 {area}'
+        lore:
+        - '&7还没有规划这个区域的范围'
+        - ' '
+        - '&7使用 &8/&3Lands selection'
+        - '&7建立选区然后输入命令'
+        - '&8/&3Lands selection assign {area}'
+        - '&7以完成区域规划.'
+        material: ACACIA_FENCE
+        from: 10
+        to: 27
+    a:
+      failure_untrusted:
+        name: '&4被拒绝: &c未被信任'
+        lore:
+        - '&c您不能打开该区域的区域菜单'
+        - ' '
+        - '&8- &7您需要被该区域信任'
+        - '&8- &7联系城镇所有者帮助'
+      failure_max-areas:
+        name: '&4失败: &c区域已满'
+        lore:
+        - '&7达到最大区域数量限制'
+        - '&7&3 {max} &7区域.'
+      failure_rental:
+        name: '&4Failure: &cRental'
+        lore:
+        - '&7You can''t edit this area'
+        - '&7while it is rented/sold.'
+        - '&7Tenant:&3 {player}'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  land_inbox:
+    title: '&0收件箱'
+    size: 36
+    f:
+      filter:
+        name: '&8> &6按类型分类'
+        lore:
+        - '&7单击此处按类型浏览消息.'
+        - ' '
+        - '&7当前类型:&3 {type}'
+        material: HOPPER
+        slot: 32
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&8# &7{id}'
+        lore:
+        - '{message}'
+        - ' '
+        - '&7单击删除.'
+        material: PAPER
+        from: 10
+        to: 27
+    a:
+      failure_owner:
+        name: '&4失败: &c权限不足'
+        lore:
+        - '&7只有城镇领主可以移除此邮件'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area:
+    title: '&0区域 {area}'
+    size: 45
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 37
+    s:
+      information:
+        name: '&6信息'
+        lore:
+        - '&7在这里，您可以：'
+        - '&7查看区域信息、管理区域。'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      trusted-players:
+        name: '&8> &6信任的玩家'
+        lore:
+        - '&7获取在此特定区域受信任的所有玩家的列表'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 13
+      invites:
+        name: '&8> &6发出的邀请'
+        lore:
+        - '&7查看或撤销邀请信息'
+        - ' '
+        - '&8- &7这些邀请可以让玩家受信任'
+        material: WRITABLE_BOOK
+        slot: 14
+      management:
+        name: '&6管理'
+        lore:
+        - '&7在这里，您可以：'
+        - '&7邀请玩家，编辑角色、税收、设定。'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 29
+      land-settings:
+        name: '&8> &6城镇设定'
+        lore:
+        - '&7在这里，您可以：'
+        - '&7管理生物的自然生存等。'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 31
+      roles:
+        name: '&8> &6角色'
+        lore:
+        - '&7查看区域中的角色'
+        - ' '
+        - '&8- &7全局角色将自动添加到该区域.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 32
+      taxes:
+        name: '&8> &6税收'
+        lore:
+        - '&7查看区域中的税收.'
+        - ' '
+        - '&8- &7税额按区域计算.'
+        material: GOLD_INGOT
+        slot: 33
+      various:
+        name: '&8> &6Various Settings'
+        lore:
+        - '&7Edit the area name'
+        - '&7and description.'
+        material: BEACON
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 45
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 30
+        to: 30
+    a:
+      failure_rental:
+        name: '&4Failure: &cRental'
+        lore:
+        - '&7You can''t set taxes for this'
+        - '&7area while it is rented/sold.'
+        - '&7Tenant:&3 {player}'
+      failure_access:
+        name: '&4Failure: &cNot allowed'
+        lore:
+        - '&7You''re not allowed to do this'
+        - '&7in this area.'
+        - ' '
+        - '&8Flag: {flag}'
+        - '&8Bypass: {bypass}'
+  area_invites:
+    title: '&0{area} &0- 发出的邀请'
+    size: 36
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&e{player}'
+        lore:
+        - '&7查看或撤消邀请'
+        - ' '
+        - '&7此邀请对应该区域：&6 {area}&7'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object_land:
+        name: '&e{player}'
+        lore:
+        - '&7查看或撤消邀请'
+        - ' '
+        - '&7此邀请对应整个城镇'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      no-invite:
+        name: '&c没有任何邀请'
+        lore:
+        - '&7您的城镇没有发出任何邀请'
+        - ' '
+        - '&7您可以在成员菜单中发出邀请'
+        material: OAK_SIGN
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  area_invite:
+    title: '&0邀请 {player}'
+    size: 27
+    s:
+      revoke:
+        name: '&8> &c撤回邀请'
+        lore:
+        - '&7单击撤回邀请'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 12
+    f:
+      info:
+        name: '&8> &6信息'
+        lore:
+        - '&7邀请Ta到该区域'
+        - '&6{area}&7.'
+        - ' '
+        - '&7已邀请:&5 {time}'
+        - '&7邀请者: {sender}'
+        material: OAK_SIGN
+        slot: 16
+      info_land:
+        name: '&8> &6信息'
+        lore:
+        - '&7邀请Ta到整个城镇'
+        - '&2{land}&7.'
+        - ' '
+        - '&7已邀请:&5 {time}'
+        - '&7邀请者: {sender}'
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      failure_noAccess:
+        name: '&4错误: &b撤销失败'
+        lore:
+        - '&c您不能撤销此区域的邀请'
+        - ' '
+        - '&8- &7请联系城镇或区域管理员'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  area_roles:
+    title: '&0{area} &7- &8角色'
+    size: 27
+    l:
+      object:
+        name: '&7{role}'
+        lore:
+        - '&7单击编辑该角色.'
+        - ' '
+        - '&bSHIFT + 左键'
+        - '&7提升优先级'
+        - ' '
+        - '&9SHIFT + 右键'
+        - '&7降低优先级'
+        material: PLAYER_HEAD
+        from: 10
+        to: 18
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&7当前页:&3 {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&7当前页:&3 {current}'
+        material: ARROW
+        slot: 26
+      create:
+        name: '&8> &a新建角色'
+        lore:
+        - '&7创造一个新角色'
+        - ' '
+        - '&7可用角色:&3 {roles} &8/&c {max}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
+        slot: 23
+      delete:
+        name: '&c删除角色'
+        lore:
+        - '&7删除此区域的一个角色'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 24
+    a:
+      failure_max-roles:
+        name: '&4失败: &cMax Roles'
+        lore:
+        - '&7This protection reached the maximum'
+        - '&7amount of&3 {max} &7roles.'
+      failure_priority:
+        name: '&4失败: &cRole Priority'
+        lore:
+        - '&7You''re not allowed to'
+        - '&7edit settings of this role.'
+        - '&7It has a higher priority'
+        - '&7than yours or you''re a'
+        - '&7member of this role.'
+      failure_access:
+        name: '&4失败: &cNot allowed'
+        lore:
+        - '&7You''re not allowed to'
+        - '&7edit roles in this area.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  role_players:
+    title: '&0{role} &0- 玩家'
+    size: 36
+    l:
+      object:
+        name: '&e{player}'
+        lore:
+        - '&7This player supports your land'
+        - '&7with &a{support} &7additional claims.'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  role_settings:
+    title: '&0{role} &0- 设定'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      block_break:
+        name: '&6破坏方块'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7在这里破坏方块?'
+        material: IRON_PICKAXE
+        from: 10
+        to: 27
+      block_place:
+        name: '&6放置方块'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7在这里放置方块?'
+        material: OAK_PLANKS
+        from: 10
+        to: 27
+      block_ignite:
+        name: '&6点燃方块'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7在这里点燃方块?'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 27
+      interact_general:
+        name: '&6交互权限'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7在这里使用音符盒什么的...?'
+        material: STRING
+        from: 10
+        to: 27
+      interact_door:
+        name: '&6开门'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7打开在这里的门?'
+        material: IRON_DOOR
+        from: 10
+        to: 27
+      interact_container:
+        name: '&6开箱'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7打开这里的容器?'
+        material: CHEST
+        from: 10
+        to: 27
+      interact_mechanism:
+        name: '&6使用红石'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7在这里使用红石?'
+        material: REDSTONE
+        from: 10
+        to: 27
+      interact_villager:
+        name: '&6村民交易'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7在您的领地与村民进行交易?'
+        material: EMERALD
+        from: 10
+        to: 27
+      attack_player:
+        name: '&6攻击玩家'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许当前角色'
+        - '&7攻击玩家?'
+        - ' '
+        - '&8- Please note that due combat'
+        - '  &7logging it might still be possible'
+        - '  &7to fight inside your land,'
+        - '  &7if a player attacked a other player'
+        - '  &7outside the land.'
+        - ' '
+        - '&8- &7They can only attack'
+        - '  &7players which can'
+        - '  &7also attack them.'
+        material: IRON_SWORD
+        from: 10
+        to: 27
+      attack_animal:
+        name: '&6攻击动物'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色攻击动物吗?'
+        material: BOW
+        from: 10
+        to: 27
+      vehicle_use:
+        name: '&6使用交通工具'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色使用交通工具吗?'
+        material: MINECART
+        from: 10
+        to: 27
+      fly:
+        name: '&6飞行'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色飞行吗?'
+        material: FEATHER
+        from: 10
+        to: 27
+      land_enter:
+        name: '&6进入此地'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色进入这里吗?'
+        material: OAK_FENCE_GATE
+        from: 10
+        to: 27
+      area_assign:
+        name: '&6框选区域'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色框选区域并规划城镇吗?'
+        material: OAK_FENCE
+        from: 10
+        to: 27
+      player_trust:
+        name: '&6邀请玩家'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色直接邀请其他玩家加入吗?'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        from: 10
+        to: 27
+      player_setRole:
+        name: '&6分配角色'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色给其他玩家分配角色吗?'
+        - ' '
+        - '&8- &7他们无法分配等级比他们高的角色.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmFjNmY3NzVlOGFjZmRmNmUxZGVhYzgwYThkYTFmMzdiM2I0YmE1Y2FhNGEzNTI0OWY5ZWIxNDVjY2Y0M2RhNSJ9fX0=
+        from: 10
+        to: 27
+      player_untrust:
+        name: '&6踢出领地'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色踢出已加入的玩家?'
+        - ' '
+        - '&8- &7他们无法踢出比自己等级高的角色'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        from: 10
+        to: 27
+      setting_edit_land:
+        name: '&6允许编辑城镇设置'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色编辑城镇设置吗?'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 27
+      setting_edit_role:
+        name: '&6允许编辑角色设置'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色编辑角色设置吗?'
+        - ' '
+        - '&8- &7他们不可以编辑自己的角色'
+        - ' '
+        - '&8- &7您应该把这个权限只给非常信赖的好朋友'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        from: 10
+        to: 27
+      war_manage:
+        name: '&6管理战争'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色挑起战争?'
+        material: IRON_SWORD
+        from: 10
+        to: 27
+      setting_edit_taxes:
+        name: '&6编辑税收'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色编辑税收吗?'
+        - ' '
+        - '&8- &7您应该把这个权限只给非常信赖的好朋友'
+        material: GOLD_INGOT
+        from: 10
+        to: 27
+      land_claim:
+        name: '&6申领区块'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色给城镇申领新的区块吗?'
+        material: IRON_SHOVEL
+        from: 10
+        to: 27
+      land_claim_border:
+        name: '&6在边界申领区块'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色直接在您的'
+        - '&7边界为他们的城镇申领新区块？'
+        material: IRON_BARS
+        from: 10
+        to: 27
+      spawn_set:
+        name: '&6设置传送点'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色编辑传送点吗?'
+        material: ENDER_EYE
+        from: 10
+        to: 27
+      spawn_teleport:
+        name: '&6传送'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色传送到这里吗?'
+        material: ENDER_PEARL
+        from: 10
+        to: 27
+      balance_withdraw:
+        name: '&6从领地银行取钱'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7允许当前角色从领地银行取钱吗?'
+        - ' '
+        - '&8- &7命令:'
+        - '  &8/&3Lands withdraw'
+        material: GOLD_NUGGET
+        from: 10
+        to: 27
+      item_pickup:
+        name: '&6Pickup Items'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Allow this role to pickup'
+        - '&7items on the ground?'
+        material: HOPPER
+        from: 10
+        to: 27
+      player_ban:
+        name: '&6Manage Bans'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Allow this role to'
+        - '&7ban or unban players?'
+        - ' '
+        - '&8- &7They won''t be able'
+        - '  &7to ban players which'
+        - '  &7have a higher role.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkMWFiYTczZjYzOWY0YmM0MmJkNDgxOTZjNzE1MTk3YmUyNzEyYzNiOTYyYzk3ZWJmOWU5ZWQ4ZWZhMDI1In19fQ==
+        from: 10
+        to: 27
+      attack_monsters:
+        name: '&6Attack Monsters'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Allow this role to'
+        - '&7attack monsters?'
+        - ' '
+        - '&8- &7If disabled, monsters'
+        - '  &7won''t be able to'
+        - '  &7attack them too.'
+        material: BOW
+        from: 10
+        to: 27
+    a:
+      failure_permission:
+        name: '&4错误: &c没有权限'
+        lore:
+        - '&7您不能编辑这个设置'
+      failure_priority:
+        name: '&4错误: &c角色越权'
+        lore:
+        - '&7您不能编辑这个角色'
+        - '&7它的优先级比您大.'
+      failure_access:
+        name: '&4错误: &c拒绝访问'
+        lore:
+        - '&7您不能在这里编辑这个设置'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_settings:
+    title: '&0{area} &0- 城镇设定'
+    size: 27
+    s: {}
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    l:
+      entity_griefing:
+        name: '&6生物破坏'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许生物破坏方块？'
+        - ' '
+        - '&8- &c注意: &7启用 → 生物可以破坏方块.'
+        material: CREEPER_HEAD
+        from: 10
+        to: 18
+      tnt_griefing:
+        name: '&6TNT 破坏'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许TNT爆炸破坏方块？'
+        - ' '
+        - '&8- &c注意: &7启用 → 别人可以用TNT破坏您的领地边边'
+        material: TNT
+        from: 10
+        to: 18
+      piston_griefing:
+        name: '&6荒野的活塞推动'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许荒郊野外的活塞推动？'
+        - ' '
+        - '&8- &c注意: &7启用 → 外面的活塞可以推方块到您的城镇'
+        material: PISTON
+        from: 10
+        to: 18
+      waterflow_allow:
+        name: '&6荒野的水流'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许荒郊野外的水流进入领地？'
+        - ' '
+        - '&8- &c注意: &7启用 → 外面的水可以流入您的城镇'
+        material: WATER_BUCKET
+        from: 10
+        to: 18
+      monster_spawn:
+        name: '&6怪物的自然生成'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许怪物的自然产生？'
+        - ' '
+        - '&8- &c注意: &7刷怪笼不受该设置的影响'
+        material: SPAWNER
+        from: 10
+        to: 18
+      animal_spawn:
+        name: '&6动物的自然生成'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许动物的自然产生？'
+        - ' '
+        - '&8- &c注意: &7刷怪笼不受该设置的影响'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
+        from: 10
+        to: 18
+      fire_spread:
+        name: '&6火焰蔓延'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许城镇内的火焰四处蔓延?'
+        - ' '
+        - '&8- &c注意: &7无论如何，荒野的火焰也不能进入城镇'
+        material: FLINT_AND_STEEL
+        from: 10
+        to: 18
+      leaf_decay:
+        name: '&6树叶腐烂'
+        lore:
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
+        - ' '
+        - '&7是否允许城镇内的树叶腐烂？'
+        - ' '
+        - '&8- &c注意: &7启用 → 树叶会腐烂'
+        material: OAK_LEAVES
+        from: 10
+        to: 18
+      plant_growth:
+        name: '&6Plant Growth'
+        lore:
+        - '&7Status: {enabled}'
+        - '&7Unlocked: {unlocked}'
+        - ' '
+        - '&7Should plants be able to grow?'
+        material: VINE
+        from: 10
+        to: 18
+    a:
+      failure_permission:
+        name: '&4失败: &c权限不足'
+        lore:
+        - '&7您不能编辑此设定'
+      failure_priority:
+        name: '&4失败: &c优先级'
+        lore:
+        - '&7此角色比您拥有更高的优先级'
+      failure_access:
+        name: '&4失败: &c禁止访问'
+        lore:
+        - '&7请让城镇的管理员允许您这么做'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  taxes:
+    title: '&0{holder} &0- 税收'
+    size: 27
+    s:
+      plus-1:
+        name: '&a增加 1T'
+        lore:
+        - '&r'
+        material: GLOWSTONE_DUST
+        slot: 11
+        data:
+          value: 1.0
+      plus-2:
+        name: '&a增加 50T'
+        lore:
+        - '&r'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 50.0
+      plus-3:
+        name: '&a增加 500T'
+        lore:
+        - '&r'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 500.0
+      minus-3:
+        name: '&c减少 500T'
+        lore:
+        - '&r'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 500.0
+      minus-2:
+        name: '&c减少 50T'
+        lore:
+        - '&r'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 50.0
+      minus-1:
+        name: '&c减少 1T'
+        lore:
+        - '&r'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      tax_area:
+        name: '&7税:&c {tax}T'
+        lore:
+        - ' '
+        - '&7In&5 {time} &7your land'
+        - '&7will receive&a ${revenue} &7as taxes'
+        - '&7from the trusted members in area.'
+        - ' '
+        - '&8- &7Players are paying'
+        - '  &7only taxes for areas,'
+        - '  &7in which they''re trusted.'
+        material: GOLD_INGOT
+        slot: 14
+    a:
+      failure_maxValue:
+        name: '&4Max Value reached'
+        lore:
+        - '&7You can''t set the tax'
+        - '&7value higher than&3 {max}&7.'
+        - ' '
+        - '&7A administrator can'
+        - '&7change this in config.'
+      failure_cooldown:
+        name: '&4Cooldown:&c You need to wait.'
+        lore:
+        - '&7You currently can''t change the'
+        - '&7tax value. You need to wait'
+        - '&5{time}.'
+        - ' '
+        - '&7A administrator can'
+        - '&7change this in config.'
+      failure_noaccess:
+        name: '&4Failure:&c No Access'
+        lore:
+        - '&7You''re not allowed to edit'
+        - '&7the taxes of this area.'
+        - ' '
+        - '&8- &7You''re missing permission'
+        - '  &7from the land owner to do so.'
+        - ' '
+        - '&8Setting: {setting}'
+        - '&8Bypass permission:'
+        - '&8lands.admin.setting_edit_taxes'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  action-confirm:
+    title: '&0请确认此操作'
+    size: 27
+    s:
+      info:
+        name: '&8> &6Confirm this Action'
+        lore:
+        - ' '
+        - '&7Click &aConfirm &7to confirm or'
+        - '&cAbort &7to abort this action.'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      yes_surrender:
+        name: '&aConfirm'
+        lore:
+        - '&7Confirm this action.'
+        - ' '
+        - '&cNOTE: &7Your land may'
+        - '&7need to pay a tribute'
+        - '&7in order to surrender.'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      no_surrender:
+        name: '&cAbort'
+        lore:
+        - '&7Abort this action.'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  player_invites:
+    title: '&0收到的邀请'
+    size: 36
+    s: {}
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6{land}'
+        lore:
+        - '&7Deny this invite or'
+        - '&7view some information.'
+        material: BOOK
+        from: 10
+        to: 27
+      no-invite:
+        name: '&c没有收到任何邀请'
+        lore:
+        - '&7这里没有任何邀请 :('
+        - ' '
+        - '&8- &7让您的朋友邀请您：'
+        - '  &8/&3Lands trust {player}'
+        material: OAK_SIGN
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  player_invite:
+    title: '&0邀请 {land}'
+    size: 27
+    f:
+      info:
+        name: '&8> &6Information'
+        lore:
+        - '&7Area:&6 {area}'
+        - '&7Land: {land}'
+        - ' '
+        - '&7Received:&5 {time}'
+        - '&7Sender: {sender}'
+        material: OAK_SIGN
+        slot: 14
+    l:
+      accept:
+        name: '&aAccept'
+        lore:
+        - '&7Accept this invite.'
+        - ' '
+        - '&7Tax value:&c ${tax}'
+        material: LIME_STAINED_GLASS_PANE
+        from: 10
+        to: 13
+      deny:
+        name: '&cDeny'
+        lore:
+        - '&7Deny this invite.'
+        - ' '
+        - '&7Tax value:&c ${tax}'
+        material: RED_STAINED_GLASS_PANE
+        from: 15
+        to: 18
+    a:
+      failure_lands:
+        name: '&4Failure: &cLands Amount'
+        lore:
+        - '&7You can''t join this'
+        - '&7land, because you reached'
+        - '&7your maximum amount of'
+        - '&3{max} &7lands you can'
+        - '&7be part of.'
+        - ' '
+        - '&8Permission:'
+        - '&8lands.lands.NUMBER'
+      failure_inviteOwner:
+        name: '&4Failure: &cInvite Owner'
+        lore:
+        - '&7You can''t join this'
+        - '&7land, because you''re'
+        - '&7not allowed to have'
+        - '&7your own land and'
+        - '&7be part of another land.'
+        - ' '
+        - '&8An administrator'
+        - '&8can change that in the config.'
+      failure_members:
+        name: '&4Failure: &cNot complete'
+        lore:
+        - '&7Couldn''t trust you in'
+        - '&7land&2 {land}, &7because'
+        - '&7they reached their maximum'
+        - '&7of&3 {max} &7members.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  player_info:
+    title: '&0玩家 {player}'
+    size: 27
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      last_seen:
+        name: '&8> &6Last seen'
+        lore:
+        - '&5{last-seen}'
+        material: CLOCK
+        slot: 11
+      max-chunks:
+        name: '&8> &6Maximum Chunk Claims'
+        lore:
+        - '&7This player can claim'
+        - '&3{chunks} &7chunks.'
+        - ' '
+        - '&8- &7If option chunks-addition'
+        - '  &7is enabled in config, this player'
+        - '  &7could support your land with'
+        - '  &3{chunks} &7additional chunk claims.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE5ZTM2YTg3YmFmMGFjNzYzMTQzNTJmNTlhN2Y2M2JkYjNmNGM4NmJkOWJiYTY5Mjc3NzJjMDFkNGQxIn19fQ==
+        slot: 13
+      lands:
+        name: '&8> &6Lands &8(&7{amount}&8)'
+        lore:
+        - '{lands}'
+        material: OAK_SIGN
+        slot: 15
+      areas:
+        name: '&8> &6Trusted Areas &8(&7{amount}&8)'
+        lore:
+        - '&7This player is trusted in these'
+        - '&7areas of land&2 {land}&7:'
+        - ' '
+        - '{areas}'
+        slot: 17
+        material: OAK_FENCE
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  land_info:
+    title: '&0城镇 {land}'
+    size: 27
+    s:
+      close:
+        name: '&cClose'
+        lore:
+        - ' '
+        - '&8- &7再次开启使用： &8/&3Lands info'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      owner:
+        name: '&4Owner&3 {player}'
+        lore:
+        - '&7They''re the owner of'
+        - '&7this land. Contact'
+        - '&7them, if you have any'
+        - '&7questions.'
+        material: PLAYER_HEAD
+        slot: 11
+      players:
+        name: '&8> &6Players &8(&7{amount}&8)'
+        lore:
+        - ' '
+        - '&e{players}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+        slot: 13
+      created:
+        name: '&8> &6Created'
+        lore:
+        - '&5{date}'
+        material: CLOCK
+        slot: 15
+      war:
+        name: '&8> &6War Stats'
+        lore:
+        - ' '
+        - '&7Won:&7 {won}'
+        - '&7Lost:&7 {lost}'
+        - '  &7WLR:&3 {wlr}'
+        - ' '
+        - '&7Kills:&7 {kills}'
+        - '&7Deaths:&7 {deaths}'
+        - '  &7KDR:&3 {kdr}'
+        material: IRON_SWORD
+        slot: 17
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  land_various:
+    title: '&0各种设定'
+    size: 27
+    a:
+      failure_noaccess:
+        name: '&4Failure: &cNo Access'
+        lore:
+        - '&7You''re not allowed to edit'
+        - '&7these options for this land.'
+        - ' '
+        - '&7Only the land owner'
+        - '&7is permitted to do that.'
+        - ' '
+        - '&8Bypass permission: {bypass}'
+    s: {}
+    f:
+      name:
+        name: '&8> &6Land Name'
+        lore:
+        - '&7Set a new name for your land.'
+        - ' '
+        - '&7当前页:'
+        - '&7{name}'
+        material: NAME_TAG
+        slot: 12
+      titles:
+        name: '&8> &6Enter Message'
+        lore:
+        - '&7Change the enter message of'
+        - '&7the land. It appears to players,'
+        - '&7which enter your land.'
+        - ' '
+        - '&7当前页:'
+        - '{title}'
+        - ' '
+        - '&7Available placeholders'
+        - '  &8> &3%owner% &8= &7Land owner'
+        - '  &8> &3%player% &8= &7Entering player'
+        - ' '
+        - '&9右键'
+        - '&7Display title: {show}'
+        material: OAK_SIGN
+        slot: 16
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  global_lands:
+    title: '&8服务器城镇'
+    size: 54
+    s:
+      close:
+        name: '&cClose'
+        lore:
+        - ' '
+        - '&8- &7再次开启使用： &8/&3Lands list&7'
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 46
+      toggle-allowed:
+        name: '&6仅展示公开的城镇？'
+        lore:
+        - '&7仅显示您可以传送的城镇？'
+        - ' '
+        - '&7单击此处切换此设置'
+        - '&7筛选器: {only-allowed}'
+        material: HOPPER
+        slot: 50
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 48
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 52
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+        - '&b单击'
+        - '&7传送到城镇'
+        - ' '
+        - '&9右键'
+        - '&7查看城镇信息'
+        - ' '
+        - '&7标题:'
+        - '&7{title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 45
+      no-land:
+        name: '&cNo Lands found'
+        lore:
+        - '&7There aren''t any created lands,'
+        - '&7which match your filter.'
+        - ' '
+        - '&8- &7To create a land execute:'
+        - '  &8/&3Lands create &8<&3name&8>'
+        material: PAPER
+        from: 10
+        to: 45
+    a:
+      failure_teleport_permission:
+        name: '&4Denied: &cPermission'
+        lore:
+        - '&cYou''re not allowed to'
+        - '&cteleport to this land spawn.'
+        - ' '
+        - '&8Permission:'
+        - '&8{permission}'
+      failure_no-spawn:
+        name: '&4Failure: &cNo Spawn set'
+        lore:
+        - '&cThis land has no spawn'
+        - '&cset yet. They need to'
+        - '&cset a land spawn first.'
+        - ' '
+        - '&8- &7They can execute'
+        - '  &8/&3Lands setspawn &7to'
+        - '  &7set the lands spawn.'
+      failure_teleport_cost:
+        name: '&4Denied: &cCosts'
+        lore:
+        - '&cYou can''t afford to'
+        - '&cteleport to this land spawn.'
+        - ' '
+        - '&7You need&c ${costs}&7.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 36
+        to: 54
+  war-state:
+    title: '&0战争'
+    size: 27
+    f:
+      attackers:
+        name: '&8> &cAttackers'
+        lore:
+        - '&7View all attacking lands'
+        - '&7of this war.'
+        - ' '
+        - '&8- &7Information'
+        - '  &7Name: {attacker}'
+        - '  &7Players: {players}'
+        - ' '
+        - '  &7Kills: {kills}'
+        - '  &7Deaths: {deaths}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTU0OTQ3ZGU3ZjUyNTk4MjU1ZDZhZmVlOWQ3N2JlZmFkOWI0ZjI0YzBjNDY2M2QyOGJjZGY4YTY0NTdmMzQifX19
+        slot: 11
+      defenders:
+        name: '&8> &aDefenders'
+        lore:
+        - '&7View all defending lands'
+        - '&7of this war.'
+        - ' '
+        - '&8- &7Information'
+        - '  &7Name: {defender}'
+        - '  &7Players: {players}'
+        - ' '
+        - '  &7Kills: {kills}'
+        - '  &7Deaths: {deaths}'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRkYmNiN2UxZmJlY2VhOWE3MzUwNDM2Y2JiZWEyYjQ5NmY3NGMyOTcyMDRmMWJiOWFjYzM4NzhkNTQyY2NiIn19fQ==
+        slot: 13
+      info_declaration:
+        name: '&8> &6Information'
+        lore:
+        - '&7The war starts in '
+        - '&5~{time}'
+        - ' '
+        - '&7The enemy can do these'
+        - '&7things in your land:'
+        - ' '
+        - '{settings}'
+        material: IRON_SWORD
+        slot: 15
+      info_war:
+        name: '&8> &6Information'
+        lore:
+        - '&7The war ends in '
+        - '&5~{time}'
+        - ' '
+        - '&7The enemy can do these'
+        - '&7things in your land:'
+        - ' '
+        - '{settings}'
+        material: IRON_SWORD
+        slot: 15
+      tribute_attacker:
+        name: '&8> &6Tribute:&c ${tribute}'
+        lore:
+        - '&7Change the tribute'
+        - '&7value for this war.'
+        - '&7A surrender will need to'
+        - '&7pay this value in order'
+        - '&7to surrender.'
+        - ' '
+        - '&9右键'
+        - '&7If a attacker wants to'
+        - '&7surrender, they''ll need'
+        - '&7to pay&c ${tribute-att} &7to'
+        - '&7the defenders.'
+        - ' '
+        - '&8- &7If the value equals 0,'
+        - '  &7the attackers wont be'
+        - '  &7able to surrender.'
+        material: GOLD_INGOT
+        slot: 17
+      tribute_defender:
+        name: '&8> &6Surrender:&c ${tribute}'
+        lore:
+        - '&7Click here to surrender'
+        - '&7in this war.'
+        - '&cA surrenderer will need to'
+        - '&cpay the tribute value of&c ${tribute}'
+        - '&cin order to surrender.'
+        - ' '
+        - '&8- &7If the value equals 0:'
+        - '  &7That means that the'
+        - '  &7attackers don''t accept'
+        - '  &7your surrender.'
+        material: GOLD_INGOT
+        slot: 17
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+      close:
+        name: '&cClose'
+        lore:
+        - ' '
+        - '&8- &7再次开启使用： &8/&3Wars menu&7'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+      tribute_attacker_mutual:
+        name: '&8> &6Tribute:&c ${tribute}'
+        lore:
+        - '&7Surrender as a attacker:'
+        - '&7Attackers need to pay&c ${tribute-att}'
+        - '&7to the defenders.'
+        - ' '
+        - '&7If the defenders surrender:'
+        - '&7Defenders need to pay&c ${tribute}'
+        - '&7to you. &7If the value equals 0, the'
+        - '&7defenders wont be able to surrender.'
+        material: GOLD_INGOT
+        slot: 17
+    a:
+      failure_permission:
+        name: '&4Failure: &cNo Access'
+        lore:
+        - '&7You''re not allowed to'
+        - '&7do this for &8({object}&8)'
+        - ' '
+        - '&8Setting: {flag}'
+        - '&8Bypass: {bypass}'
+      failure_surrender:
+        name: '&4Failure: &cSurrender rejected'
+        lore:
+        - '&7The enemy does not allow'
+        - '&7you to surrender.'
+        - ' '
+        - '&7That''s because they didn''t'
+        - '&7set a tribute. They can do that'
+        - '&7in their war menu.'
+      failure_attacker:
+        name: '&4Failure: &cNot allowed'
+        lore:
+        - '&7Attackers are not allowed'
+        - '&7to surrender. Only defenders'
+        - '&7can surrender.'
+        - ' '
+        - '&8This has been configured'
+        - '&8in config.'
+      failure_cost:
+        name: '&4Failure: &cNot enough Money'
+        lore:
+        - '&7You &8({object}&8) &7have'
+        - '&7not enough money to pay the'
+        - '&7tribute of&c ${tribute}&7.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  war_lands:
+    title: '&0{type}'
+    size: 36
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 34
+    l:
+      object:
+        name: '&2{land}'
+        lore:
+        - '&7Open the land information'
+        - '&7menu of this land.'
+        - ' '
+        - '&7Total players:&3 {players}'
+        - '&7Title: {title}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  war-declaration_tribute:
+    title: '&0Tribute'
+    size: 27
+    s:
+      plus-1:
+        name: '&aAdd $1'
+        lore:
+        - '&7Add $1 to the'
+        - '&7tribute value.'
+        material: GLOWSTONE_DUST
+        slot: 11
+        amount: 1
+        data:
+          value: 1.0
+      plus-2:
+        name: '&aAdd $100'
+        lore:
+        - '&7Add $100 to the'
+        - '&7tribute value.'
+        material: GLOWSTONE_DUST
+        slot: 12
+        data:
+          value: 100.0
+      plus-3:
+        name: '&aAdd $1000'
+        lore:
+        - '&7Add $1000 to the'
+        - '&7tribute value.'
+        material: GLOWSTONE_DUST
+        slot: 13
+        data:
+          value: 1000.0
+      minus-3:
+        name: '&cRemove $1000'
+        lore:
+        - '&7Remove $1000 from'
+        - '&7the tribute value.'
+        material: REDSTONE
+        slot: 15
+        data:
+          value: 1000.0
+      minus-2:
+        name: '&cRemove $100'
+        lore:
+        - '&7Remove $100 from'
+        - '&7the tribute value.'
+        material: REDSTONE
+        slot: 16
+        data:
+          value: 100.0
+      minus-1:
+        name: '&cRemove $1'
+        lore:
+        - '&7Remove $1 from'
+        - '&7the tribute value.'
+        material: REDSTONE
+        slot: 17
+        data:
+          value: 1.0
+    f:
+      tribute:
+        name: '&7Tribute:&c ${tribute}'
+        lore:
+        - '&7The defending land will need to'
+        - '&7to pay this value in order to'
+        - '&7surrender.'
+        - ' '
+        - '&8- &7The maximum tribute for '
+        - '  &7this land is&3 ${max}&7.'
+        - '  &7A server administrator can'
+        - '  &7change that in the config.'
+        - ' '
+        - '&cNOTE: &7If you set the tribute'
+        - '&7value to 0, the defending land'
+        - '&7won''t be able to surrender.'
+        material: GOLD_INGOT
+        slot: 14
+      send-declaration:
+        name: '&aSend War Declaration'
+        lore:
+        - '&7Click here to send this'
+        - '&7war declaration to the'
+        - '&7enemy.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
+        slot: 27
+      abort-declaration:
+        name: '&cAbort War Declaration'
+        lore:
+        - '&7Click here to abort this'
+        - '&7war declaration.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
+        slot: 19
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      max-tribute:
+        name: '&4Max Value reached'
+        lore:
+        - '&7You can''t set the tribute'
+        - '&7value higher than&3 {max}&7.'
+        - ' '
+        - '&8- &7You can ask an administrator'
+        - '  &7to change this.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
+  admin_wilderness:
+    title: '&0荒野设定'
+    size: 9
+    s:
+      player-settings:
+        name: '&8> &6Player Settings'
+        lore:
+        - '&7Customize what players'
+        - '&7should be able to do'
+        - '&7in the wilderness.'
+        slot: 3
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
+      land-settings:
+        name: '&8> &6Land Settings'
+        lore:
+        - '&7Here you can edit general'
+        - '&7settings like mob spawning.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        slot: 7
+      close:
+        name: '&cClose'
+        lore:
+        - ' '
+        - '&8- &7再次开启使用： &8/&3Lands admin wilderness&7'
+        material: RED_STAINED_GLASS_PANE
+        slot: 9
+        enabled: true
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+  admin_wilderness_player-settings:
+    title: '&0玩家设定'
+    size: 36
+    l:
+      object:
+        name: '&6{setting}'
+        lore:
+        - '&7Status: {enabled}'
+        - ' '
+        - '&7Click here to allow'
+        - '&7or disallow players to do'
+        - '&7this in the wilderness.'
+        - ' '
+        - '&8Bypass: {bypass}'
+        material: STONE
+        from: 10
+        to: 27
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 35
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 27
+        to: 36
+  admin_wilderness_land-settings:
+    title: '&0城镇设定'
+    size: 27
+    l:
+      object:
+        name: '&6{setting}'
+        lore:
+        - '&7Status: {enabled}'
+        - ' '
+        - '&7Click here to toggle'
+        - '&7this setting.'
+        material: STONE
+        from: 10
+        to: 18
+    f:
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 21
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 25
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 19
+        to: 27
+  area_players:
+    title: '&0{area} &0- 已加入玩家'
+    size: 36
+    l:
+      object_all:
+        name: '&e{player}'
+        lore:
+        - '&7Use mouse wheel'
+        - '&7click to get some'
+        - '&7more information.'
+        - ' '
+        - '&7Trusted in these areas:'
+        - '{areas}'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+      object:
+        name: '&e{player}'
+        lore:
+        - '&7当前角色: {role}'
+        - ' '
+        - '&b单击'
+        - '&7▲ 提升角色'
+        - ' '
+        - '&9右键'
+        - '&7▼ 降级角色'
+        - ' '
+        - '&7查看更多信息:'
+        - '&7鼠标中键'
+        material: PLAYER_HEAD
+        from: 10
+        to: 27
+    a:
+      failure_priority:
+        name: '&4Failure: &cRole Priority'
+        lore:
+        - '&7You''re not allowed to'
+        - '&7edit settings of this role.'
+        - '&7It has a higher or equal'
+        - '&7priority than yours.'
+        - ' '
+        - '&8Bypass: {bypass}'
+      noaccess_setrole:
+        name: '&4Failure: &cNot permitted'
+        lore:
+        - '&7You''re not allowed to do this.'
+        - '&7The land owner can give you'
+        - '&7permission to do so.'
+      failure_max-players:
+        name: '&4Failure: &cMax trusted Players'
+        lore:
+        - '&7This land reached their maximum'
+        - '&7amount of&3 {max} &7members.'
+        - ' '
+        - '&8Permission: lands.members.NUMBER'
+    f:
+      toggle:
+        name: '&8> &6View only Area'
+        lore:
+        - '&7Display only players'
+        - '&7which are trusted in'
+        - '&7this area&6 {area}&7?'
+        - ' '
+        - '&7If disabled: Displays'
+        - '&7players of the whole land.'
+        - '&7Also it allows you to'
+        - '&7trust / untrust players'
+        - '&7in the whole land.'
+        - ' '
+        - '&7当前页: {current}'
+        material: HOPPER
+        slot: 32
+      trust:
+        name: '&8> &a邀请新成员'
+        lore:
+        - '&7点击邀请请玩家到此处'
+        - ' '
+        - '&7成员数量:&3 {players} &8/&c {max}'
+        - ' '
+        - '&7拥有一个庞大的组织?'
+        - '&7拥有&bPro&7可以容纳50名成员!'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
+        slot: 31
+      untrust:
+        name: '&8> &c把成员扫地出门'
+        lore:
+        - '&7点击这里把成员赶出去'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
+        slot: 33
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      page_previous:
+        name: '&9上一页'
+        lore:
+        - '&7回到上一页面:&9 {previous}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 29
+      page_next:
+        name: '&a下一页'
+        lore:
+        - '&7前往下一页面:&9 {next}'
+        - ' '
+        - '&8- &7当前页:&3 {current}'
+        material: ARROW
+        slot: 35
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  role:
+    title: '&0{role}'
+    size: 36
+    f:
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+      icon:
+        name: '&8> &6图标'
+        lore:
+        - '&7单击改变角色图标'
+        material: STONE
+        slot: 14
+      name:
+        name: '&8> &6重命名'
+        lore:
+        - '&7重命名此角色'
+        - '&7当前名称: {name}'
+        material: NAME_TAG
+        slot: 15
+      apply:
+        name: '&8> &6自动信任到新区域'
+        lore:
+        - '&7是否自动信任此角色到新区域？'
+        - ' '
+        - '&7当前状态: {apply}'
+        material: OAK_FENCE
+        slot: 24
+    s:
+      information:
+        name: '&6信息'
+        lore:
+        - '&7查看有关角色的信息'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
+        slot: 11
+      members:
+        name: '&8> &6角色成员'
+        lore:
+        - '&7查看拥有此角色的程艳'
+        material: PLAYER_HEAD
+        slot: 13
+      management_info:
+        name: '&6管理'
+        lore:
+        - '&7编辑有关角色的设定'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
+        slot: 20
+      settings:
+        name: '&8> &6行为设定'
+        lore:
+        - '&7允许或禁止有关行为'
+        - '&7例如： 放置方块'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM2YjgyMWMxYWZkZDVhNWQxNGUzYjNiZDBhMzIyNjNjOGRmNWRmNWRiNmUxZTg4YmY2NWU5N2IyN2E4NTMwIn19fQ==
+        slot: 22
+      management:
+        name: '&8> &6高级设定'
+        lore:
+        - '&7允许或禁止高级管理行为'
+        - '&7例如： 审批玩家'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZkOTZlYWM1YTcwMTY4NDM3Y2NmZmFlZTBlN2ZjNWFjNWMwMjJmNDI5ZTNlZDkyOWNkNTE4OTRhMmRkNmQ4In19fQ==
+        slot: 23
+    a:
+      no-item:
+        name: '&c找不到物品'
+        lore:
+        - '&7请把物品拿在手中'
+      failure_access:
+        name: '&4c错误: &c拒绝访问'
+        lore:
+        - '&7您不能编辑这个设置'
+        - ' '
+        - '&7您需要得到领地主人的允许'
+      failure_priority:
+        name: '&4错误: &c角色越权'
+        lore:
+        - '&7您不能编辑这个角色'
+        - '&7它的权利比您大；或者您只是一个成员'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 36
+      placeholder_2:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 12
+        to: 12
+      placeholder_3:
+        material: BLUE_STAINED_GLASS_PANE
+        from: 21
+        to: 21
+  land_claims:
+    title: '&0{land} - 占领的区块'
+    size: 36
+    s: {}
+    f:
+      toggle:
+        name: '&7世界:&3 {world}'
+        lore:
+        - '&7Click here to toggle'
+        - '&7the world.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
+        slot: 32
+      page_previous:
+        name: '&9Previous Page'
+        lore:
+        - '&7Go to previous page:&9 {previous}'
+        - ' '
+        - '&8- &7Current:&3 {current}'
+        material: ARROW
+        slot: 30
+      page_next:
+        name: '&aNext Page'
+        lore:
+        - '&7Go to next page:&9 {next}'
+        - ' '
+        - '&8- &7Current:&3 {current}'
+        material: ARROW
+        slot: 34
+      back:
+        name: '&c返回'
+        lore: []
+        material: RED_STAINED_GLASS_PANE
+        slot: 28
+    l:
+      object:
+        name: '&6World: {world} X: {x} Z: {z}'
+        lore:
+        - '&7Claimed: {time} &7ago'
+        - ' '
+        - '&7Click to teleport.'
+        material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
+        from: 10
+        to: 27
+    a:
+      failure_cooldown:
+        name: '&4Failure: &cCooldown'
+        lore:
+        - '&7You need to wait another {time}'
+        - '&7before you can do this again.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 9
+      placeholder_2:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 29
+        to: 36
+  area_various:
+    title: Various Settings
+    size: 27
+    f:
+      name:
+        name: '&8> &6Name'
+        lore:
+        - '&7Rename this area.'
+        - ' '
+        - '&7Current:'
+        - '{name}'
+        material: NAME_TAG
+        slot: 11
+      description:
+        name: '&8> &6Description'
+        lore:
+        - '&7Change the description of'
+        - '&7this area.'
+        - ' '
+        - '&7Current:'
+        - '{description}'
+        material: OAK_SIGN
+        slot: 14
+      icon:
+        name: '&8> &6Icon'
+        lore:
+        - '&7Change the icon of'
+        - '&7this area.'
+        - ' '
+        - '&7This helps you to search'
+        - '&7area in the areas menu.'
+        material: OAK_FENCE
+        slot: 17
+      back:
+        name: '&cBack'
+        lore:
+        - '&7Go back to'
+        - '{back}&7.'
+        material: RED_STAINED_GLASS_PANE
+        slot: 19
+    a:
+      no-item:
+        name: '&cNo Item in Hand'
+        lore:
+        - '&7You need to have an item'
+        - '&7in your main hand.'
+    p:
+      placeholder_1:
+        material: GRAY_STAINED_GLASS_PANE
+        from: 1
+        to: 27
