@@ -1,0 +1,888 @@
+# 若翻译存在问题请联系我修改,QQ: 849025143,MCBBS: 卿歌
+# 请勿将此翻译文件用于买卖,这是不道德的！
+# 你可以在任何地方发布此文件,但请勿删除这些注释
+# 不可以宣称该翻译文件所有者是你,尊重一下劳动成果,谢谢.
+general:
+  prefix:
+    normal: '&9&l[&f部落&9&l] &7'
+    help: '&9&l[&f部落&9&l] &7用法: '
+  wYes: '&a肯定'
+  wNo: '&c否定'
+  none: '&8无'
+  disabled: '&c关闭'
+  wilderness: '&a荒野'
+  unlimited: '&a无限'
+
+  land:
+    title:
+      land: '&7所有者&3 %owner%&7.'
+      safezone: '&7你现在安全了'
+    default-area: '&7默认'
+
+  area:
+    description:
+      default: '&7默认宣言,阿巴 阿巴 阿巴 阿巴'
+      sub: '&7子区域,可各种自定义'
+      rented: '&7该区域由 &3{player} &7租用'
+      sold: '&7该区域已出售给 &3{player}'
+
+  time:
+    days: '天'
+    hours: '时'
+    minutes: '分'
+    seconds: '秒'
+
+  status:
+    online: '&a在线'
+    offline: '&c离线'
+
+  top:
+    title: '&7-----<- &5部落排行 &8(&7合计:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7金币:&e ${value}'
+    next-page: '&7下一页: &8/&2Lands top {next}'
+    last-updated: '&7最后更新: {time} &7前'
+    footer: '&7-----<- &5部落排行 &8(&7合计:&b {total}&8) &7->-----'
+
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br /><br/>Members: <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<p><span style="font-size: 120%; color: #339966;"><span style="font-size: 120%;">Spawnpoint</span></span></p><p>Open to visitors: {public}</p>'
+
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&2 {land} &8>'
+      line-3: '&7所有者 {owner}'
+      line-4: '&7金币:&3 ${value}'
+    noLand:
+      line-1: ' '
+      line-2: '&c无部落'
+      line-3: ' '
+      line-4: ' '
+    rent:
+      line-2: '&6租借 {area}'
+      line-3: '&c${cost} &8/ &5{time}'
+      line-4: '&8最大: {max}'
+    sell:
+      area:
+        line-2: '&a购买'
+        line-3: '&7区域&6 {area}'
+        line-4: '&c${cost}'
+      land:
+        line-2: '&a购买'
+        line-3: '&7部落&2 {land}'
+        line-4: '&c${cost}'
+    rented:
+      line-2: '&7区域&6 {area}'
+      line-3: '&7{player}'
+      line-4: '&5{time} &7left'
+    sold:
+      area:
+        line-2: '&7区域&6 {area}'
+        line-3: '&a已出售 &7给'
+        line-4: '&7{player}'
+      land:
+        line-2: '&7部落&2 {land}'
+        line-3: '&a已出售 &7给'
+        line-4: '&7{player}'
+
+  autoAction:
+    claim: '区块占领'
+
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+
+    info:
+      wilderness: ' &2▉ &7= 荒野'
+      yours: ' &a▉ &7= 自身'
+      trusted: ' &5▉ &7= 盟友'
+      others: ' &c▉ &7= 其他'
+      position: ' &e▉ &7= 当前'
+
+    hover:
+      wilderness: '&7该区块为荒野,点击可占领.'
+      yours: '&7所有领土,点击查看相关信息&3 {land}&7.'
+      trusted: '&7盟友领土,点击查看相关信息&3 {land}&7.'
+      others: '&7他人领土,点击查看相关信息&3 {land}&7.'
+      position: '&7目前位置.'
+
+  inbox:
+    general:
+      created: '&8{0}: &7部落已创建.'
+
+    member:
+      join: '&8{0}: &7成员 {1} 睡醒了.'
+      leave: '&8{0}: &7成员 {1} 睡着了.'
+      ban: '&8{0}: &c成员 {1} 遭到了封禁.'
+
+    economy:
+      upkeep:
+        warning: '&8{0}: &c无法支付维护费: ${1}'
+        unclaimed: '&8{0}: &c无法支付维护费 ${1}. 前次所占领土 (X: {2} Z: {3}) 已成荒野.'
+        paid: '&8{0}: &7已缴纳维护费: ${1}'
+
+      bank:
+        withdraw: '&8{0}: &c成员 {1} 取款 ${2} -> 金币 = ${3}'
+        deposit: '&8{0}: &7成员 {1} 存款 ${2} -> 金币 = ${3}'
+
+      taxes:
+        warning: '&8{0}: &c成员 {1} 未缴税.'
+        untrusted: '&8{0}: &c成员 {1} 未缴税,已被踢出部落.'
+        received: '&8{0}: &7已获得 &3{1} &7税收 -> 金币 = {2}'
+
+    war:
+      declaration:
+        sent: '&8{0}: &7已向 {1} 宣战: &8/Wars info'
+        received: '&8{0}: &c{1} &c已向我方宣战: &8/Wars info'
+
+        mutual:
+          sent: '&8{0}: &7向 {1} 发送了战争请求. &7需对方接受.'
+          received: '&8{0}: &c{1} &c向我方发送了战争请求. 接受: &8/&3Wars declare {2}'
+
+      surrender:
+        sent: '&8{0}: &c对敌方投降,已向敌方支付赔偿金 ${1}'
+        received: '&8{0}: &7敌方部落 {1} &7已投降. 收到 ${2} 赔偿金.'
+
+      end:
+        won: '&8{0}: 战争胜利,统计: 击杀 {1} , 死亡 {2}'
+        draw: '&8{0}: 战争结束,统计: 击杀 {1} , 死亡 {2}'
+        lost: '&8{0}: 战争失败,统计: 死亡 {2} , 击杀 {1}'
+
+  wars:
+    object:
+      enemy: '&c敌对'
+      ally: '&a盟友'
+
+    nametag:
+      enemy: '&c敌对 &8| '
+      ally: '&a盟友 &8| '
+
+  teleportation:
+    bossbar: '&7传送中,请等待&5 {time} &7秒(s)'
+
+help:
+  command:
+    help: '[T]&8/&3Lands help &8[&3页&8] - &7查看帮助[H]&7点击复制.[/H][SC]lands help[/SC][/T]'
+    edit: '[T]&8/&3Lands edit &8<&3部落&8> &8- &7编辑模式[H]&7编辑区域 类似于/Lands claim. &7点击复制.[/H][SC]lands edit[/SC][/T]'
+    claim: '[T]&8/&3Lands claim &8[&3部落 | 不填&8] - &7土地占领[H]&7占领当前位置的土地,也可以指定某个部落所有. &7点击复制.[/H][SC]lands claim[/SC][/T]'
+    create: '[T]&8/&3Lands create &8<&3玩家&8> - &7创建部落[H]&7点击复制.[/H][SC]lands create[/SC][/T]'
+    leave: '[T]&8/&3Lands leave &8[&3部落&8] &8- &7退出部落或区域.[H]&7若未指定目标,则默认指定当前位置所属目标. &7点击复制.[/H][SC]lands leave[/SC][/T]'
+    unclaim: '[T]&8/&3Lands unclaim &8- &7取消占领[H]&7支持 /Lands selection. &7点击复制.[/H][SC]lands unclaim[/SC][/T]'
+    delete: '[T]&8/&3Lands delete &8<&3部落&8> &8- &7删除部落[H]&7点击复制.[/H][SC]lands delete[/SC][/T]'
+    trust: '[T]&8/&3Lands trust &8<&3玩家&8> [&3区域&8] - &7信任用户[H]&7若使用 * 作为区域名,则该玩家拥有所有区域权限. &7点击复制.[/H][SC]lands trust[/SC][/T]'
+    untrust: '[T]&8/&3Lands untrust &8[&3区域&8] - &7取消信任[H]&7若使用 * 作为区域名,则删除该玩家所有对应区域权限. &7点击复制.[/H][SC]lands untrust[/SC][/T]'
+    setRole: '[T]&8/&3Lands setrole &8<&3玩家&8> &8<&3区域&8> <&3职位&8> - &7设置职位[H]&7点击复制.[/H][SC]lands setrole[/SC][/T]'
+    accept: '[T]&8/&3Lands accept &8<&3部落&8> - &7接受邀请[H]&7你已经使用"/Lands invites"命令查看所有邀请. &7点击复制.[/H][SC]lands accept[/SC][/T]'
+    deny: '[T]&8/&3Lands deny &8<&3部落&8> - &7拒绝邀请[H]&7点击复制.[/H][SC]lands deny[/SC][/T]'
+    view: '[T]&8/&3Lands view &8[&3disable-关闭&8] &8- &7领土信息[H]&7这个命令也会显示附近的领土. &7点击复制.[/H][SC]lands view[/SC][/T]'
+    menu: '[T]&8/&3Lands menu &8[&3部落丨不填&8] &8- &7打开部落的区域菜单 / area menu[H]&7点击复制.[/H][SC]lands menu[/SC][/T]'
+    setSpawn: '[T]&8/&3Lands setspawn - &7设置传送点[H]&7点击复制.[/H][SC]lands setspawn[/SC][/T]'
+    spawn: '[T]&8/&3Lands spawn &8[&3部落&8] - &7前往部落传送点[H]&7点击复制.[/H][SC]lands spawn[/SC][/T]'
+    wild: '[T]&8/&3Lands wild &8[&3世界&8] &8[&3玩家&8] &8- &7随机传送区域及玩家[H]&7点击复制.[/H][SC]lands wild[/SC][/T]'
+    top: '[T]&8/&3Lands top &8[&3页&8] &8- &7排行前十的部落名单[H]&7点击复制.[/H][SC]lands top[/SC][/T]'
+    selection: '[T]&8/&3Lands selection &8[&3assign &8| &3expand &8| &3点-1 &8| &3点-2&8] &8- &7选择模式[H]&7该命令可调整子区域大小,或将所选区域扩展至最大. &7点击复制.[/H][SC]lands selection[/SC][/T]'
+    chat: '[T]&8/&3Lands chat &8[&3部落&8] <&3信息&8> &8- &7向部落发生信息[H]&7点击复制.[/H][SC]lands chat[/SC][/T]'
+    rename: '[T]&8/&3Lands rename &8<&3名称&8> - &7重命名部落[H]&7点击复制.[/H][SC]lands rename[/SC][/T]'
+    teleport: '[T]&8/&3Lands teleport &8[&3世界&8] <&3X轴&8> <&3Z轴&8> - &7传送到某位置[H]&7点击复制.[/H][SC]lands teleport[/SC][/T]'
+    invites: '[T]&8/&3Lands invites &8- &7查看已收到的邀请函[H]&7点击复制.[/H][SC]lands invites[/SC][/T]'
+    info: '[T]&8/&3Lands info &8[&3部落&8] - &7查看部落信息[H]&7点击复制.[/H][SC]lands info[/SC][/T]'
+    player: '[T]&8/&3Lands player &8<&3玩家&8> - &7查看某成员信息[H]&7点击复制.[/H][SC]lands player[/SC][/T]'
+    map: '[T]&8/&3Lands map &8- &7查看地图[H]&7点击复制.[/H][SC]lands map[/SC][/T]'
+    balance: '[T]&8/&3Lands balance &8[&3部落&8] - &7查看部落金库[H]&7点击复制.[/H][SC]lands balance[/SC][/T]'
+    deposit: '[T]&8/&3Lands deposit &8[&3部落&8] <&3金额&8> - &7向部落金库存款[H]&7点击复制.[/H][SC]lands deposit[/SC][/T]'
+    withdraw: '[T]&8/&3Lands withdraw &8[&3部落&8] <&3金额&8> - &7从部落金库取款[H]&7点击复制.[/H][SC]lands withdraw[/SC][/T]'
+    list: '[T]&8/&3Lands list &8[&3世界&8] - &7查看部落列表[H]&7点击复制.[/H][SC]lands list[/SC][/T]'
+    assign: '[T]&8/&3Lands assign &8<&3区域&8> - &7将所选内容划分给某区域[H]&7点击复制.[/H][SC]lands assign[/SC][/T]'
+    setowner: '[T]&8/&3Lands setowner &8<&3玩家&8> - &7转让所有权[H]&7点击复制.[/H][SC]lands setowner[/SC][/T]'
+    ban: '[T]&8/&3Lands ban &8<&3玩家&8> [&3区域&8] - &7封禁某玩家,可指定区域[H]&7点击复制.[/H][SC]lands ban[/SC][/T]'
+    unban: '[T]&8/&3Lands unban &8<&3玩家&8> [&3区域&8] - &7取消封禁某玩家,可指定区域[H]&7点击复制.[/H][SC]lands unban[/SC][/T]'
+    taxes: '[T]&8/&3Lands taxes &8- &7查看即将缴纳的税款[H]&7点击复制.[/H][SC]lands taxes[/SC][/T]'
+    unstuck: '[T]&8/&3Lands unstuck &8- &7自救[H]&7防止被卡在某个莫名其妙的地方. &7点击复制.[/H][SC]lands unstuck[/SC][/T]'
+    claims: '[T]&8/&3Lands claims &8[&3部落&8] &8- &7查看领土列表[H]&7该命令可展示部落所拥有的所有土地. &7点击复制.[/H][SC]lands claims[/SC][/T]'
+    rent: '[T]&8/&3Lands rent &8<&3cancel &8| &3info &8| &3removeOffer &8| &3removeTenant&8> &8- &7管理租金[H]&7使用该命令可在当前位置设置租金. &7点击复制.[/H][SC]lands rent[/SC][/T]'
+
+    wars:
+      declare: '[T]&8/&3Wars declare &8<&3部落&8> - &7宣战[H]&7点击复制.[/H][SC]lands unstuck[/SC][/T]'
+      info: '[T]&8/&3Wars info - &7查看当前\即将开始 的战争[H]&7点击复制.[/H][SC]lands unstuck[/SC][/T]'
+      menu: '[T]&8/&3Wars menu &8- &7打开战争菜单[H]&7点击复制.[/H][SC]lands unstuck[/SC][/T]'
+      deny: '[T]&8/&3Wars deny &8- &7拒绝彼此宣战[H]&7点击复制.[/H][SC]lands unstuck[/SC][/T]'
+
+    admin:
+      admin: '[T]&8/&3Lands admin &8<&3sub-command&8> &8- &7管理员命令[H]&7点击复制.[/H][SC]lands admin[/SC][/T]'
+      debug: '[T]&8/&3Lands debug &8- &7数据统计信息[H]&7点击复制.[/H][SC]lands debug[/SC][/T]'
+      safezone: '[T]&8/&3Lands safezone &8- &7设置安全区[H]&7点击复制.[/H][SC]lands safezone[/SC][/T]'
+      reload: '[T]&8/&3Lands reload &8- &7重载配置与语言文件[H]&7点击复制.[/H][SC]lands reload[/SC][/T]'
+      about: '[T]&8/&3Lands about &8- &7显示部落信息[H]&7点击复制.[/H][SC]lands about[/SC][/T]'
+
+    mod:
+      chatspy: '[T]&8/&3Lands chatspy &8[&3部落&8] - &7监听部落聊天[H]&7点击复制.[/H][SC]lands chatspy[/SC][/T]'
+
+message:
+  world-not-exist: '&c世界名&4 {world} &c不存在. &7手误?'
+  world-invalid: '&c于该世界无效.若为异常,请联系管理员处理. 世界: {world}'
+  feature-disabled: '&c该功能已禁用.若不妥,请联系管理员. 功能: {setting}'
+  current-war: '&c目前无法操作. &7部落&2 {land} &7正在进行一场战争. &7请等待战争结束.'
+  noaccess:
+    chunk: '&c无法在该区块进行操作 &8(&7部落:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8管理员: {bypass}'
+    area: '&c无法在该区域进行操作 &8(&7区域:&6 {area} &7部落:&2 {land} &7X: {x} &7Z: {z}&8)&c. &8管理员: {bypass}'
+    land: '&c无法在该部落进行操作 &8(&7部落:&2 {land}&8)&c. &7可创建部落 &8/&3Lands create &8<&3名称&8>&7.'
+    position: '&c当前所在部落 &4 {land} &c无法进行该操作. &8管理员: {bypass}'
+    land-not-owner: '&c无法在部落&4 {land}&c进行该操作. &7请选择所有领土 &8(/&3Lands edit &8<&3部落&8>) &7或创建部落 &8(/&3Lands create &8<&3名称&8>)&7. &8管理员: lands.admin.land_edit'
+    claim: '&c该位置为保护区,无法占领土地. &7保护区: {plugin}'
+    place: '&c该位置无法放置. &7所属部落&2 {land}&7.'
+    break: '&c该位置无法破坏. &7所属部落&2 {land}&7.'
+    ignite: '&c该位置无法点燃. &7所属部落&2 {land}&7.'
+    enter: '&c无法进入部落&4 {land} &c所属区域 &4 {area} .&7已反弹至原位.'
+    vehicle: '&c该位置无法使用载具. &7所属部落&2 {land}&7.'
+    fly: '&c该位置无法飞行. &7所属部落&2 {land}&7. &8管理员: {bypass}'
+    edit: '&c该土地无法编辑. &7所属部落&2 {land}&7.'
+    banned: '&c无法进入,已被该区域封禁. &8(&7区域:&6 {area} &7部落:&2 {land}&8)&7. &8管理员: {bypass}'
+    teleport: '&c无法使用该物品传送至部落&4 {land}&c. &7你并不是该部落成员.'
+    interact:
+      general: '&c该区域禁止互动. &7所属部落&2 {land}&7.'
+      door: '&c该区域禁止与门互动. &7所属部落&2 {land}&7.'
+      mechanism: '&c该区域禁止与器械互动. &7所属部落&2 {land}&7.'
+      container: '&c该区域禁止与容器互动. &7所属部落&2 {land}&7.'
+      villager: '&c该区域禁止与村民互动. &7所属部落&2 {land}&7.'
+    combat:
+      animal: '&c该区域禁止攻击动物. &7所属部落&2 {land}&7.'
+      pvp:
+        attacker: '&c该区域禁止攻击玩家. &7所属部落&2 {land}&7.'
+        target: '&c目标无法在这里攻击玩家. &7无法在此与其战斗. &7所属部落&2 {land}&7.'
+        ally: '&c无法在荒野攻击友军. &7在职位设置中开启PVP后,可在领土进行战斗.'
+        wilderness: '&c无法攻击目标,自身位于领土而对方处于荒野.'
+
+  area:
+    exists: '&c领地&4 {land} &c中,已存在名为&4 {area} &c的区域.'
+    not-exist: '&c领地&4 {land} &c中,不存在名为&4 {area} &c的区域.'
+    default: '&c无法对部落&4 {land} &c,的默认区域&4 {area} &c执行此操作.'
+
+  event:
+    fly:
+      counter: '#t#&c飞行模式[newline]&c余 &4{sec} &c秒(s)'
+      disabled: '&c飞行模式已关闭. &7该位置无飞行许可.'
+
+    enter:
+      land: '#t#&2&l{land}[newline]&3{title}'
+      safezone: '#t#&2&l{land}[newline]{title}'
+      pvp-warning: '#a#&c已进入PVP区域.'
+
+    leave:
+      land: '#t#&2&l荒野[newline]&7感受战乱的魅力~'
+      safezone: '#t#&2&l荒野[newline]&7感受战乱的魅力~'
+
+  teleportation:
+    already: '&c重复.传送进行中,请等待传送完成.'
+    started: '&7传送开始. 将在&5 {sec} &7秒内完成. 请勿移动.'
+    cancelled: '&c传送已停止. &7请勿移动,你需要等待&5 {sec} &7秒.'
+    chunk: '#t#&9&l传送至[newline]&7X: {x} Z: {z} 花费:&c ${cost}'
+    plugin: '&c传送已取消. &7请联系管理员处理.'
+    unsafe: |
+      &c传送已取消,目的地不安全.
+
+       [T]&7仍然传送: &8[CLICK][H]&7警告: 目的地不安全,或对你造成伤害.[/H][C]{cmd}[/C][/T]
+    corrected: '&7初始目的地不安全. &7已修改为安全位置.'
+
+  claimblock:
+    dropped: '&c一些领土方块掉落在地上. &7因为你的背包已满.'
+    success: '&7你获得了&3 {blocks} &7个领土方块. &7将其放在区块内以占领.'
+    not-owner: '&c无法使用该领土方块. &7所有者&3 {owner}&7.'
+
+  blacklist:
+    untrusted: '&c该区域无法使用此命令. &7未获得对应权限,所属: 部落&2 {land} ,区域&6 {area} . &8管理员: {permission}'
+    general: '&c已占领土地无法使用此命令. &8管理员: {permission}'
+    war: '&c战争期间禁止使用该命令. &8管理员: {permission}'
+
+  autoAction:
+    stopped: '&c已停止当前的自动操作. &7已达最大值. 名称:&3 {name}'
+    started: '&7已开启自动操作. 名称:&3 {name}'
+    removed: '&7已停止自动操作. &7名称:&3 {name}'
+
+  role:
+    exists: '&c职位名称&4 {role} &c已存在. &7请更换.'
+    not-exist: '&c该区域不存在职位&e {role} . &7手误?'
+    max: '&c该部落无法创建更多职位. &7已到达上限&3 {max} &7. 所需权限: lands.roles.值'
+
+    player:
+      land: '&c无法在部落&4 {land}&c中编辑该玩家. &7职位&6 {role} &7等级高于或等于你.'
+      area: '&c无法在区域&4 {area} &c编辑该玩家 &8(&7部落:&2 {land}&8)&c. &7职位&6 {role} &7等级高于或等于你.'
+
+    weight:
+      land: '&c无法修改部落&4 {land} &c的职位&4 {role} &c. &7该职位等级高于或等于你.'
+      area: '&c无法修改区域&4 {area} &c的职位&4 {roel} &8(&7部落:&2 {land}&8)&c. &7该职位等级高于或等于你.'
+
+    delete:
+      owner: '&c所有者职位无法删除. &7该职位是必存的.'
+      entry: '&c新人分组无法删除. &7它对应新加入的成员.'
+      visitor: '&c访客分组无法删除. &7它对应新加入的成员,且必存.'
+
+
+  chat-action:
+    cancelled: '#t#&c&l取消[newline]&c&l聊天操作'
+    player: '&7请输入目标名称.'
+    land: '&7请输入部落名称.'
+    title: '&7请输入新部落名.'
+    rename: '&7请为该目标设定新名称,不应存在空格.'
+    name: '&7请在聊天栏输入名称.'
+    area:
+      create: '&7请输入区域名称.'
+      delete: '&7请输入将删除的区域名称'
+      exists: '&c该部落已存在区域&4 {area} &c. &8(&7部落:&2 {land}&8)&c. &7请更换或修改它再试.'
+      max: '&c该部落区域已上限. &7最大上限&3 {max} &7. 所需权限: lands.areas.值'
+
+
+
+command:
+  rent:
+    edit: '&c暂时无法编辑部落&4 {land} &c的区域&4 {area} , 它已 出售\租借 给&3 {player}&7.'
+    tenant: '&c你并没有 租借\购买 该区域. &8( &7部落&2 {land} &7区域&6 {area} &8)&7.'
+    none: '&c该区域无人 租借\购买 &8( &c部落&4 {land} &c区域&4 {area} &8)'
+    status: '&c该区域未设置 租借\出售 &8(&c部落&4{land} &c区域{area} &8)'
+    confirm: |
+      &c你需要支付&4 {cost} &c补偿金,给予&4 {player} &c才能将它删除:
+        [T]&a确认: &8[CLICK][H]&7点击确认并补偿.[/H][C]租客驱逐确认[/C][/T]
+    set:
+      land: '&c无法将整个部落&4 {land} &c出租. &7请创建子区域设置出租,或将其直接出售. (行=Sell)'
+      already: '&c无法再次设置租金. &7区域&6 {area} &7正被&3 {player}&7租借中. 期限&5 {time}&7.'
+      sold: '&c无法设置已出售的区域. &7区域&6 {area} &7已被&3 {player}&7购买.'
+      success: '&7已将区域&6 {area} &7设置为租借地. 租金&c ${cost} &7租期&5 {time}&7.'
+
+      invalid: |
+        &7你输入的"行"格式无效 (行: {line})
+         &81. 行:&7 部落
+         &82. 行:&7 租借区域 &8[&7area&8]
+         &83. 行:&7 最大租期 (不需要)
+         &84. 行:&7 花费 (期: 5 = $5)
+      info: |
+        [NoPrefix]
+        &7---------<- &5&l租借区域 &7->---------
+        [T]&部落:&a {land} &8[&8CLICK&8][H]&7点击显示该区域边幅.[/H][C]可视化[/C][/T]
+         &7区域:&6 {area}
+         &7花费:&c ${cost} &7每期 {time}
+         &8最大租期: {max}
+        &7---------<- &5&l租借区域 &r&7->---------
+
+    rent:
+      trusted: '&c无法租借部落&4 {land}&c的区域&4 {area} &c. &7自己家为什么要交钱啊？？'
+      expire: '&c无法继续为区域&4 {area}&c续期. &7部落&2 {land} &7已将其转租. 期限&5 {time}&7.'
+      max: '&c无法为区域&4 {area}&c增加更多租期. &7部落&2 {land} &7设置的最大租期为&5 {max} &7.'
+      add: '&7已为区域&6 {area} &7增加&5 {add} &7租金 &7当前&c ${cost}&7. 租期&5 {time}&7.'
+      success: '&7已成功租借部落&2 {land} &7的区域&6 {area} ,&7花费&c {cost}&7. 租期为&5 {time}&7.'
+      info: |
+        [NoPrefix]
+        &7---------<- &5&l租借信息 &7->---------
+        [T]&7部落:&a {land} &8[&8CLICK&8][H]&7点击显示该区域边幅.[/H][C]可视化[/C][/T]
+         &7区域:&6 {area}
+         &7租客: {player}
+         &7租期:&5 {left}
+         &8租金: ${cost} 租期 {time}
+        &7---------<- &5&l租借信息 &r&7->---------
+
+    cancel:
+      success: '&7已停止租用区域&6 {area}&7. 已无法对该区域进行相关操作.'
+
+    remove:
+      offer:
+        success:
+          land: '&7部落&2 {land} &7已无法购买.'
+          area: '&7部落&2 {land} &7的区域&6 {area} &7已无法再 购买\租借.'
+      tenant:
+        success: '&7已将部落&2 {land} 的区域&6 {area} &7中的租客&3 {player} &7逐出,并支付&c {cost} 作为补偿.'
+
+  sell:
+    sell:
+      rented: '&c无法出售正在被租用的区域. &7区域&6 {area} &7正由&3 {player}&7 租借中. 租期&5 {time}&7.'
+      success:
+        area: '&7已设置区域&6 {area} &7为出售. 价格:&c ${cost}'
+        land: '&7已设置部落&2 {land} &7为出售. 价格:&c ${cost}'
+      invalid: |
+        &7你所输入的"行"格式无效 (行: {line})
+         &81. 行:&7 部落
+         &82. 行:&7 出售区域 &8[&7area&8]
+         &83. 行:&7 价格 (期: 5 = $5)
+
+    buy:
+      success:
+        area: '&7不购买了部落&2 {land} &7的区域&6 {area}&7 花费&c ${cost}&7.'
+        land: '&7你购买了部落&2 {land} &7花费&c ${cost}&7.'
+
+      info:
+        area: |
+          [NoPrefix]
+          &7---------<- &5&l购买区域 &7->---------
+          [T]&7部落:&a {land} &8[&8CLICK&8][H]&7点击显示该区域边幅.[/H][C]可视化[/C][/T]
+           &7区域:&6 {area}
+           &7价格:&c ${cost}
+          &7---------<- &5&l购买区域 &7->---------
+        land: |
+          [NoPrefix]
+          &7---------<- &5&l购买部落 &7->---------
+          [T]&7部落:&a {land} &8[&8CLICK&8][H]&7点击显示该区域边幅.[/H][C]可视化[/C][/T]
+          &7价格:&c ${cost}
+          &7---------<- &5&l购买部落 &7->---------
+
+    sold: |
+      [NoPrefix]
+      &7---------<- &5&l区域出售 &7->---------
+      [T]&7部落:&a {land} &8[&8CLICK&8][H]&7点击显示该区域边幅.[/H][C]可视化[/C][/T]
+       &7区域:&6 {area}
+       &7买家&3 {player} &7花费&c ${cost}&7.
+      &7---------<- &5&l区域出售 &7->---------
+
+  general:
+    no-permission: '&c操作失败,权限不足. &8所需权限 {permission}.'
+    land-not-exist: '&c部落名&2 {land} &c不存在. &7手误？.'
+    area-not-exist: '&c部落&4 {land} &c中不存在名为&4 {area} &c的区域. &7请检查或创建一个.'
+    land-not-member: '&c你不是部落&4 {land}&c的成员. &7使用 &8/&3Lands menu &7来查看所属部落.'
+    no-edit-land: '&c未选择需要编辑的部落. &7使用 &8/&3Lands edit &8<&3部落&8> &7来选择.'
+    name-exists: '&名称&4 {name} &c已存在. &7请重新输入.'
+    money-cost-bank: '&c部落金库没有足够的金币. &7需求&c ${cost}&7. 存款命令: &8/&3Lands deposit {cost}'
+    money-cost: '&c金币不足. &7需求&c ${cost}&7.'
+    swear-word: '&c检测到禁用词. &7请使用其他词语. 词:&c {word}'
+    action-cooldown: '&c冷却中. &7请等待&5 {time}&7秒. &8管理员: {bypass}'
+    land-none: '&c你没有任何部落. &7使用 &8/&3Lands create &7来创建一个部落.'
+    land-no-own: '&c你没有任何部落. &7使用 &8/&3Lands create &7来创建一个部落.'
+    world-invalid: '&c该世界无法使用. &7若为故障请联系管理员添加世界&3 {world} .'
+    wilderness: '&c当前位置为荒野. &7请站在一片领土上再尝试. &7可使用命令 &8/&3Lands menu &7查阅领土.'
+    player-not-exist: '&c玩家名&4 {player}&c 不存在. &7手误?'
+    player-offline: '&c玩家名&4 {player} &c未在线. &7手误?'
+    player-self: '&c目标不能是自己. &7冷静一点啊 先生\姑娘. :)'
+    banks-disabled: '&7部落金库被管理员禁用. &8若有不妥请联系管理员.'
+    land-not-trusted: '&c玩家&4 {player} &7并不是该部落成员 &8(&7部落:&2 {land}&8)&7. 你得先给他权限 &8/&3Lands trust&7.'
+    area-not-trusted: '&c无法在该区域操作. &7你并不是该区域的成员. &8( &7部落&2 {land} &7中区域&6 {area} &8)'
+    invalid-number: '&你输入的&4 {input} &c并不是数字. &7参数&3 {argument} &7必须为数字.'
+    number: '&c你输入的 {input} &c并不是数字. &7参数&3 {argument} &7必须为数字.'
+
+
+    name:
+      number: '&c请勿使用数字. &7请使用字母 数字:&3 {invalid}'
+      character: '&c请勿使用花里胡哨的符号. &7请使用数字或字母. 符号:&3 {invalid}'
+      color: '&c请勿使用颜色代码. &7请删除它们再试.'
+      length: '&c名称过长. &7最大长度&3 {max} &7, &8(&7输入: {input}&8)&7. &8包括颜色代码.'
+      empty: '&c此名称无效. &7你至少要输入一个 字\字母\数字,而不是颜色代码.'
+
+  help:
+    header: '[NoPrefix][T]&7----------&6<<<<&7-[H]&7点击返回上一页.[/H][C]{cmd} help {previous}[/C][/T] &2部落帮助 &7页&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7点击前往下一页.[/H][C]{cmd} help {next}[/C][/T]'
+    footer: |
+      [NoPrefix]
+      &7点击下面的箭头前往下一页.
+      [T]&7----------&6<<<<&7-[H]&7点击返回上一页.[/H][C]{cmd} help {previous}[/C][/T] &2部落帮助 &7页&3 {page} &8/&3 {pages} [T]&7-&6>>>>&7----------[H]&7点击前往下一页.[/H][C]{cmd} help {next}[/C][/T]
+    help: '&7使用 &8/&a{cmd} help &7来查阅帮助.'
+    cmd-not-exist: '&c该命令不存在. &7命令&3 {command} &7不存在.'
+
+  create:
+    land-other: '&c无法拥有部落的同时加入他人部落. &7你必须先离开部落&2 {land} &7. &8若有不妥请联系管理员 功能: invite-owner'
+    max-own: '&c无法创建更多部落. &7部落上限&3 {max} &7. &8所需权限: lands.ownlands.值'
+    success: '&7已成功创建部落&2 {land} &7花费&c ${cost}&7. 占领土地命令 &8/&3Lands claim&7. 使用命令&3 "/Lands selection" &7可选择区域. &7若要编辑部落&2 {land} &7,请输入&3 "/Lands edit"&7 进入编辑模式.'
+    broadcast: '&7玩家&3 {player} &7已创建部落&2 {land} &7.'
+
+  rename:
+    success: '&7已成功修改名称为&3 {name} &8(&7部落:&2 {land}&8)&7. 花费&c ${cost}&7.'
+
+  edit:
+    success: '&7已进入该领土的编辑模式 &8(&7部落:&2 {land}&8)&7. 可执行命令 &8/&3Lands claim &7或 &8/&3Lands trust&7, 仅对当前领土生效.'
+
+  selection:
+    not-complete: '&c所选择的区域不完整. &7请确保所需的两个点均已设置 &8(&b左击 &7和 &9右击&8)&7. 你可以使用命令 &8/&3Lands selection&7 来切换编辑模式.'
+    max: '&c所选择的区块过大. &7尺寸:&3 {current} &7最大尺寸&3 {max} 个区块. &8所需权限: lands.selection.值'
+    too-far: '&c所注视的目标过远. &7请靠近一点.'
+    enabled: '&7已启动编辑模式. 请进行 &b左击 &7选择第一个点,再进行 &9右击 &7选择第二个点.'
+    disabled: '#t#&5编辑模式[newline]&c已关闭'
+    world: '&c两点所在世界不同. &7跨世界圈地？你在开玩笑呢？'
+    complete: |
+      &7选择成功,可进行以下操作:
+        &8┏
+        &8┃ &7占领: [T]&8/&3占领土地 &8[&8CLICK&8][H]&7点击占领所选区域.[/H][C]lands claim[/C][/T]
+        &8┃ &7取消占领: [T]&8/&3取消占领土地 &8[&8CLICK&8][H]&7点击取消占领所选区域.[/H][C]lands unclaim[/C][/T]
+        &8┃ &7划分至子区域: [T]&8/&3划分至子区域[H]&7将所选区域划分给某区域.[/H][SC]lands assign <area>[/SC][/T]
+        &8┗
+    pos:
+      warn: '&c警告: &7该区块隶属于其他插件. 名称:&3 {plugin}'
+      cancelled: '&c该位置无法选择. &7该区块隶属于其他插件. 名称:&3 {plugin}'
+      one: '#t#&5&l选择[newline]&b&l点-1 &8-> &7设置'
+      two: '#t#&5&l选择[newline]&b&l点-2 &8-> &7设置'
+
+    area:
+      conflicts: '&c反馈&4 {conflicts} &c已分配给另一个区域. &7使用命令 &8/&3Lands selection assgin {area} confirm &7来覆盖它. 该冲突来自区域: {areas}'
+      assigned: '&7已成功将领土&3 {chunks} &7分配至区域&6 {area} &8(&7部落:&2 {land}&8)&7.'
+
+    expand:
+      enabled: '&7已成功将所需区域于底部拓展至顶部 (Y轴).'
+      disabled: '&7当前选择区域不再拓展至所有Y轴.'
+
+  claim:
+    already: '&c你已占领该区块. &7隶属于部落&2 {land}&7.'
+    initial-world: '&c部落&4 {land} &c只能在初始领土所在世界&4 {world}&c 中占领其他领土. &7但你可以在当前世界创建另一个部落 ({current}): &8/&3Lands create &8<&3部落&8>'
+    auto-create: '&7已自动为你创建一个部落,因为你未拥有. 你可以使用命令 &8/&3Lands rename&7 来为其更名.'
+    auto-create-fail: '&c无法自动创建部落. &7请阅读上述信息.'
+    near-other: '&c距离部落&4 {land}&c 过近. &7你需要离它更远一点. 最小距离为&3 {distance}&7 个区块. &8若有不妥请联系管理员.'
+    far-land: '&c无法占领该区块. &7所占领的土地必须与其他领土相连 &8(&7部落:&2 {land}&8)&7.'
+    success: '&7已成功占领该土地 &8(&7部落:&2 {land} &7X: {x} Z: {z}&8) &7花费&c ${cost}&7. 下次占领所需&c ${next}&7.'
+    already-claimed: '&c你所选择的区域内有一块属于其他部落 &8(&7X: {x} Z: {z}&8)&c. &7所属部落&2 {land}&7.'
+    max-chunk: '&c领土已上限,无法占领土地&4 {chunks} &c. &7部落&2 {land} &7的最大上限为&3 {max} &7个. &8所需权限: lands.chunks.值'
+    selection: '&7已成功占领&3 {chunks} &7块土地 &8(&7部落:&2 {land}&8)&7. 花费&c ${cost}&7.'
+
+  assign:
+    selection: '&c创建前你必须先选择一块区域. &7使用命令 &8/&3Lands selection &7来选择. 在这之后再试.'
+    default: '&c所选区域无法分配给部落默认区域. &7可在区域菜单中删除它.'
+    size: '&c所选区域过小. &7最小尺寸&3 {min} &7所选尺寸&3 {current}&7.'
+    success: '&7已成功修改部落&2 {land} &7中区域&6 {area} &7的尺寸. 可查阅已修改的尺寸.'
+    conflict:
+      land: '&c所选择区域与部落&4 {land}&c 冲突. &7请调整所选区域.'
+      area: '&c所选区域与部落区域&4 {area}&c 冲突. &7请调整所选区域.'
+
+  leave:
+    owner: '&c无法退出该部落. &7身为所有者,你只能 转交\删除 该部落. 使用命令 &8/&3Lands delete {land} &7来删除部落.'
+    land:
+      untrusted: '&7你并不是部落&2 {land}&7 的成员.'
+      success: '&7已成功退出部落&2 {land}&7.'
+    area:
+      untrusted: '&7你并不是该区域成员 &8( &7部落&2 {land} &7区域&6 {area} &8)'
+      success: '&7已成功退出该区域 &8( &7部落&2 {land} &7区域&6 {area} &8)'
+
+  unclaim:
+    rental: '&c无法取消占领该领土&7, 正处于 租借\出售 状态 所属区域&6 {area}&7. 目标:&3 {player}'
+    connection: '&c无法取消占领该领土, 这会导致其他领土相互断开连接. &7领土 X: {x} Z: {z} 将断连.'
+    success: '&7已成功取消占领该领土 &8(&7部落:&2 {land} &7X: {x} Z: {z}&8)&7. 已返回&c {back} &7金币.'
+    selection:
+      empty: '&c取消占领失败,该区块未被占领或不具备对应权限.'
+      rental: '&c无法取消占领该选区&7, 正处于 租借\出售 状态 &8( &7所属区域&6 {area} &7 部落&2 {land}&8) 目标:&3 {player}'
+      connection: '&7已取消占领所选领土 {success} / {size} 个, &c失败数 {failed} . &c因为这会导致其他领土失连. &7已返还&c ${back} &7金币.'
+      partly: '&7已取消占领所选土地 {success} / {size} 个. 已返还&c ${back} &7金币.'
+      success: '&7成功取消占领所选区域. 已返回&c ${back} &7金币.'
+
+  delete:
+    nation: '&c无法删除该部落, 因为它是国家&4 {nation}&c 的核心部落. &7你需要删除国家&8(/&3Nations delete&8) &7换转交国家 &8(/&3Nations setCapital&8)&7.'
+    confirm: |
+      &c请点击下方按钮确认该操作.
+
+        [T]&a确认: &8[CLICK][H]&7确认删除部落 {land}.[/H][C]lands delete {land} confirm[/C][/T]
+    success: '&7已成功删除 &8(&7部落:&2 {land}&8)&7. 已返还&e ${back} &7金币.'
+    broadcast: '&7成员&3 {player} &7删除了部落&2 {land}&7.'
+
+  trust:
+    own-land: '&c玩家&4 {player} &c无法加入部落. &7他必须离开所在部落&2 {land} &7才可加入.'
+    max-lands: '&7玩家&3 {player} &7所在部落数已达上限. &8所需权限: lands.lands.值'
+    max-members: '&c&c部落&4 {land}&c 无法给予玩家&4 {player} &c权限. &7部落成员已达上限&3 {members} &7.'
+    max: '&c玩家&4 {player} &c无法加入部落. &7最大加入数&3 {max} &7. &8所需权限: lands.lands.值'
+    area:
+      invited: '&c玩家&4 {player} &c已收到区域性邀请函 &8( &7区域&4 {area} &7部落&4 {land} &7发送时间&5 {time} &7前 &8)'
+      trusted: '&7玩家&3 {player} &7已为区域成员 &8( &7区域&6 {area} &7部落&2 {land} &8)'
+      success: '&7已邀请玩家&3 {player} &7加入该区域 &8（ &7区域&6 {area} &7部落&2 {land}&8 )'
+      target: |
+        [T]&7玩家&3 {player} &7邀请你加入区域 &8( &7区域&6 {area} &7部落&2 {land}&8 )[H]&7点击打开受邀菜单.[/H][C]lands invites[/C][/T] &7赋税:&c ${tax}
+
+          [T]&2接受 &8[&8CLICK&8][H]&7点击接受该邀请.[/H][C]lands accept {land}[/C][/T]
+          [T]&c拒绝 &8[&8CLICK&8][H]&7点击拒绝该邀请.[/H][C]lands deny {land}[/C][/T]
+
+    land:
+      invited: '&c玩家&4 {player} &c已收到部落邀请 &8(&7部落&4 {land} &7发送时间&5 {time} &7前 &8)'
+      trusted: '&7玩家&3 {player} &7已为部落&2 {land}&7 的成员.'
+      success: '&7已邀请玩家&3 {player} &7加入部落&2 {land}&7.'
+      target: |
+        [T]&7玩家&3 {player} &7邀请你加入部落&2 {land}&7.[H]&7点击打开受邀菜单.[/H][C]lands invites[/C][/T] &7赋税:&c ${tax}
+
+          [T]&2接受 &8[&8CLICK&8][H]&7点击接受该邀请.[/H][C]lands accept {land}[/C][/T]
+          [T]&c拒绝 &8[&8CLICK&8][H]&7点击拒绝该邀请.[/H][C]lands deny {land}[/C][/T]
+
+  untrust:
+    area:
+      already: '&7玩家&3 {player} &7并非区域&6 {area} &7的成员,且未受到任何邀请 &8( &7部落 &2{land} &8)'
+      revoke: '&7已撤销对玩家&3 {player} &7的区域性邀请 &8(&7部落:&2 {land} &7区域 &6{area} &8)'
+      success: '&7已删除区域性成员&3 {player} &8(&7部落:&2 {land} &7区域&6 {area} &8)'
+      rental: '&c无法删除区域&4 {area} &c的租客&4 {player} &c. &7你可以删除租借区域, 使用命令 &8/&3Lands rent remove &7需站在租借区域使用.'
+
+    land:
+      already: '&7玩家&3 {player} &7在部落&2 {land} &7的所有区域都不是成员,且未受到任何邀请.'
+      revoke: '&7已撤销对玩家&3 {player} &7的部落邀请,他不是部落任何区域的成员 &8(&7 部落 &2{land} &8)'
+      success: '&7已将玩家&3 {player} &7从部落&2 {land}&7 的成员名单中移除, 但他的 租借地\购置地 除外.'
+
+  setrole:
+    visitor: '&c无法设置职位&4 {role} &c. &7若不信任该玩家,请使用命令 &8/&3Lands untrust {player} [区域]&7 将其移除.'
+    land:
+      untrusted: '&c玩家&4 {player} &c并非部落&4 {land}&c 的成员. &7请先给予权限.'
+      success: '&7已成功为成员&3 {player} 设置职位&3 {role} &8( &7部落&2 {land} &8)'
+    area:
+      untrusted: '&c玩家&4 {player} &c并非该区域成员 &8( &7区域&4 {area} &7部落&4 {land} &8)'
+      success: '&7已成功设置成员&3 {player} &7的区域性职位为&3 {role} &8( &7区域&6 {area} &7部落&2 {land} &8)'
+
+  accept:
+    max: '&c无法加入任何部落. &7已到达最大数&3 {max} &7. &8所需权限: lands.lands.值'
+    not-exist: '&c未收到来自部落&4 {land} &c的任何邀请,或已过期. &7请检查是否输入正确.'
+    own-land: '&c无法加入该部落. &7你无法拥有部落的同时加入其它部落. &7请先删除 所有部落&2 {land} &7.'
+    max-lands: '&c无法加入任何部落. &7已到达最大数&3 {max} &7. &8所需权限: lands.lands.值'
+    notification: '&7已有&3 {invites} &7张来自其它部落的邀请函. 使用命令 &8/&3Land invites &7来查阅它们.'
+    area:
+      success: '&7已成功接受区域性邀请 &8( &7部落&2 {land} &7区域&6 {area} &8)'
+      broadcast: '&2{land} &8| &7玩家&3 {player} &7已成为区域&6 {area} &7的成员.'
+    land:
+      success: '&7已成功接受该部落的邀请 &8( &7部落&2 {land} &8)'
+      broadcast: '&2{land} &8| &7玩家&3 {player} &7已成为部落的一员.'
+
+  setowner:
+    max-lands: '&c玩家&4 {player} &c无法拥有更多部落. &7Ta已达最大数&3 {max} &7. &8所需权限: lands.ownlands.值'
+    confirm: '&c你将把部落&2 {land} &c转交给玩家&3 {player} &c请输入 &8/&3Lands setowner {player} confirm &c来确认该操作'
+    success: '&7已成功将部落&2 {land} &7转交给玩家&3 {player} &7. 已支付&c ${cost}&7 金币.'
+  deny:
+    not-exist: '&c你没有收到部落&4 {land} &c的邀请,或已过期. &7手误?'
+    success: '&7已成功拒绝来自部落&2 {land}&7 的邀请.'
+
+  teleport:
+    chunk-not-claimed: '&c未占领区域 &8(&7X: {x} &7Z: {z}&8)&c. &8管理员: lands.bypass.wilderness.teleport'
+    not-trusted: '&c无法传送至目标地点. &7并非部落&2 {land}&7 的成员.'
+    success: '&7已传送至 X:&3 {x} &7Z:&3 {z} &7状态: {claimed}'
+
+  setspawn:
+    force-land: '&c仅可在领土设置传送点. &7请先反回部落&2 {land} &7的领土. &8若有不妥请联系管理员.'
+    success: '#t#&7传送点设置[newline]&7花费:&c ${cost}'
+
+  spawn:
+    not-exist: '&c部落&4 {land}&c 并没有设置传送点. &7请先使用命令 &8/&3Land setspawn&7 来设置一个.'
+    not-allowed: '&c无法传送至目标部落. &7需要获得权限 &8(&7部落:&2 {land}&8)&7.'
+    chunk: '&7部落&2 {land} &7未设置传送点. &7已传送至初始领地. 设置方法 &8(&8/&3Lands setspawn&8)'
+    unsafe: '&c该传送点不安全,无法传送. &7请使用命令 &8/&3Lands setspawn&7 重新设置.'
+    success: '&7已抵达部落&2 {land} &7的传送点 &7花费:&c ${cost}'
+
+  wild:
+    no-location: '&c无法找到合适的传送位置. &8管理员: 需调整 最大\最小 距离,并设置世界出生点 (/setworldspawn).'
+    searching: '#t#&6搜索目的地[newline]&e传送正在进行中..'
+    success: '&7已传送至 &8(&7X: {x} Z: {z}&8)&7. 花费&c ${cost}&7.'
+
+  deposit:
+    number: '&7请输入存款金额. 使用命令 &8/&3Lands deposit &8<&3金额&8> &7或 &8/&3Lands deposit &8<&3部落&8> <&3金额&8>&7.'
+    success: '&7已成功向部落金库存款&3 ${cost} &7. &7金库余额:&3 ${bank} &8(&7部落:&2 {land}&8)'
+
+  withdraw:
+    number: '&7请输入取款金额. 使用命令 &8/&3Lands withdraw &8<&3金额&8> &7或 &8/&3Lands withdraw &8<&3部落&8> <&3金额&8>&7.'
+    balance: '&c金库余额不足. &7仅剩&3 ${bank} &7金币可用. 欲取款:&3 ${take} &8(&7部落:&2 {land}&8)'
+    success: '&7已成功从部落金库取款&3 ${cost} &7. &7金库余额:&3 ${bank} &8(&7部落:&2 {land}&8)'
+
+  balance: '&7金库余额&3 ${balance} &8(&7部落:&2 {land}&8)&7.'
+
+  ban:
+    area:
+      success: '&7区域&6 {area} &7已将玩家&3 {player} &7封禁,Ta将无法 传送\进入 该区域 &8( &7部落&2 {land} &8)'
+      target: '&c部落&4 {land} &c的区域&4 {area} &c已将你封禁. &7你已无法 进入\传送 于该区域.'
+    land:
+      success: '&7已封禁玩家&3 {player} &7,Ta将无法 传送\进入 该区域 &8( &7部落&2 {land} &8)'
+      target: '&c部落&4 {land} &c已将你封禁&c. &7你已无法 进入\传送 于该区域.'
+
+  unban:
+    area:
+      success: '&7已成功解除玩家&3 {player} &7的区域性封禁 &8(&7区域:&6 {area} &7部落:&2 {land}&8)&7.'
+      target: '&部落&2 {land} &7解除了你位于区域&6 {area}&7 的封禁.'
+
+    land:
+      success: '&7已成功解除对玩家&3 {player} &7的封禁 &8( &7部落&2 {land} &8)'
+      target: '&7部落&2 {land} &7已解除对你的封禁.'
+
+  chat:
+    activated: '&7启用部落聊天,发送的信息仅部落成员可见.'
+    deactivated: '&7已禁用部落聊天.'
+    no-land: '&c未拥有部落. &7使用命令 &8/&3Lands chat toggle &7来切换聊天频道.'
+
+    format:
+      minecraft: '[NoPrefix]&a{land} &8| {role} &7{player} &8»&f {message}'
+      discord: '[NoPrefix]&a{land} &8| &9Discord &7{player} &8»&f {message}'
+      spy: '[NoPrefix]&8[&cChatSpy&8] &a{land} &8| {role} &7{player} &8»&f {message}'
+
+  view:
+    disabled: '&7已关闭边幅显示, 启用命令为 &8/&3Lands view'
+    wilderness: '&7已开启边幅显示. &7当前位置为荒野.'
+    info: |
+      [NoPrefix]
+      &7---------<- &5&l部落预览 &7->---------
+      [T]&7部落:&a {land} &8[&8CLICK&8][H]&7点击查看部落更多信息.[/H][C]lands info {land}[/C][/T]
+      &7坐标 &7X: {x} Z: {z}
+      &7启用:&6 {area}
+       &8赋税:&c ${tax}
+       &8成员:&7 {players}
+       &8宣言:&r {description}
+      &7---------<- &5&l部落预览 &r&7->---------
+    area: |
+      [NoPrefix]
+      &7---------<- &5&l区域预览 &7->---------
+      [T]&7部落:&a {land} &8[&8CLICK&8][H]&7点击查看部落更多信息.[/H][C]lands info {land}[/C][/T]
+      &7区域&6 {area}
+       &8赋税:&c ${tax}
+       &8成员:&7 {players}
+       &8宣言:&r {description}
+      &7---------<- &5&l区域预览 &r&7->---------
+
+  map:
+    header: '&7-<------------<- &6部落地图 &7->------------>-[newline]'
+    footer: '[newline]&7-<------------<- &6部落地图 &7->------------>-'
+
+  unstuck:
+    success: '&7已成功传送至最近的荒野区域.'
+
+  taxes:
+    none: '&7无任何所需缴纳的税务.'
+    upcoming:
+      header: '[NoPrefix]&7---------<- &c所需缴税 &7->---------'
+      entry: '[NoPrefix]&8- &7{land}: &c${tax}'
+      footer: |
+        [NoPrefix]&7你需要缴纳 ${total} ,缴期 &5{next}&7.
+        &7金币: ${balance}
+        &7---------<- &c所需缴税 &7->---------
+
+    changes:
+      header: |
+        [NoPrefix]
+        &7---------<- &4税赋变更 &7->---------
+        &c部分部落的税赋已变更:
+      entry: '[NoPrefix]&8- &7{land}: {color}${tax} &8(上次: {previous})'
+      footer: |
+        [NoPrefix]
+        &7下次缴税:&5 {next}
+        &7金币: ${balance}
+        &8更多信息: /Lands taxes
+        &7---------<- &4Tax Change &7->---------
+
+
+list:
+  swear-words: [ ]
+
+wars:
+  message:
+    noaccess:
+      action: '&c战争正在进行,无法进行该操作. &8标志: {flag} &8管理员: {bypass}'
+      pillage: '&c防守方未在线. &7请等待至少&3 {defenders} &7名防守方在线.'
+
+    start:
+      broadcast: '&7部落 {attacker} &7与 {defender} &7展开了一场战争. 结束时间&5 {time}&7.'
+      participants: |
+        &4战争进行中:
+
+        &7进攻方: {attacker} &8({team_1}&8)
+        &7防守方: {defender} &8({team_2}&8)
+
+        &7结束时间:
+        &5~{time}
+
+    end:
+      broadcast: '&7部落 {attacker} &7与 {defender} &7的战争结束了. 耗时&5 {time}&7.'
+      surrender: '{object} &7已投降. 将支付&c ${tribute} &7赔偿金给 {enemy}&7.'
+      draw: '&7部落 {attacker} &7与 {defender} &7已讲和. 耗时&5 {time}&7.'
+      won: |
+        &a战争已结束:
+        &7进攻方 &8({team}&8) &7已胜利.
+
+        &8- &7统计
+            &7进攻方击杀:&3 {att-points}
+            &7防守方击杀:&3 {def-points}
+
+        &7战争耗时:
+        &5~{time}
+
+    war-shield:
+      set: '&7{object} &7的免战牌将持续到&5 {time}&7.'
+
+    kill:
+      target:
+        attackers: '&7队友 {attacker} &7已被防守方&c {defender}&7 击杀.'
+        defenders: '&7队友&a {defender} &7已被进攻方&c {attacker}&7 击杀.'
+
+      killer:
+        attackers: '&7队友&a {attacker} &7杀死了防守方&c {defender}&7.'
+        defenders: '&7队友&a {defender} &7杀死了进攻方&c {attacker}&7.'
+
+  command:
+    general:
+      no-war: '&c没有任何战争将在 {object}&c 进行. &7享受着片刻的宁静吧.'
+
+    declare:
+      not-allowed: '&c无法对 {object}&c 宣战. &7必须由所有者 {object} &7进行该操作.'
+      member: '&c无法对 {object}&c 宣战. &7你或敌方首领在某个部落为友军.'
+      war-shield: '&c无法对 {object}&c 宣战. &7目标拥有免战牌,剩余时间&5 {time}&7.'
+      no-nation: '&c无法攻击部落&4 {land}&c. &7他们必须是某个联盟的一员才能参加战争.'
+      no-target: '&c未指定部落或联盟的名称 &8( &7名称&4 {target} &8) &7手误?'
+      ally: '&c无法对 {object}&c 宣战. &7你们同属于联盟&9 {nation}&7 的一员.'
+      balance: '&c无法宣告进攻. &7进攻方 {object} &7至少拥有&c ${min} &7金币才能进攻.'
+      broadcast: '&7部落 {attacker} &7已向 {defender}&7 宣战. 战争将在&5 {time}&7 后开始.'
+      confirm: '&c确定要向 {object}&c 宣战吗? &7使用命令 &8/&3Wars declare {input} confirm&7 来确认操作.'
+
+      success: '&7部落 &8({attacker}&8) &7已向 {defender}&7 宣战. 战争将在&5 {time}&7 后开始.'
+      target: '&7部落 {attacker} &7已向我发部落 &2{defender} &7宣战. 战争将在&5 {time}&7 后开始.'
+
+      mutual:
+        success: |
+          &7部落 &8({attacker}&8) &7已向 {defender}&7 发送战争宣言.
+           &7在战争开始前,可接受或拒绝.
+           &7若防守方投降,则需向进攻方支付&c ${tribute} &7赔偿金.
+        target: |
+          &7部落 {attacker} &7已向我方部落 {defender} &7发送战争宣言.
+           &7若防守方投降,则需向进攻方支付&c ${tribute} &7赔偿金.
+
+           [T]&7接受: &8/&3Wars declare {input} &8[&8CLICK&8][H]&7点击接受该战争宣言.[/H][C]Wars declare {input}[/C][/T]
+           [T]&7拒绝: &8/&3Wars deny &8[&8CLICK&8][H]&7点击拒绝该战争宣言.[/H][C]Wars deny[/C][/T]
+      already:
+        attacker: '&c无法参加另一场战争. &7请等待与 {object} &7的战争结束.'
+        defender: '&c此时无法与目标宣战. &7目标 {object} &7正在进行一场战争'
+
+      min-players:
+        attacker: '&c无法发动战争, 目标 {object} &c需要更多成员. &7至少需要&3 {min} &7名成员才能宣战.'
+        defender: '&c无法对 {object}&c 发动战争, 目标成员过少. &7至少需要&3 {min} &7名成员才能宣战.'
+
+    deny:
+      attacker: '&c进攻方无法拒绝战争宣言. &7仅防守方可用.'
+      ongoing: '&c无法拒绝对于 {enemy}&c 的长期战争. &7仅可拒绝 {object}&7 的战争宣言.'
+      success: '&7已成功拒绝 {object} &7对敌人 {enemy}&7 的战争宣言.'
+
+    menu:
+      mutual: '&c暂时无法打开战争菜单. &7发给 {object} &7的战争宣言暂未被接受.'
+
+    info:
+      war: |
+        &4当前战争:
+
+        &8- &7进攻方
+            &7部落: {attacker}
+            &7击杀: {att-points}
+
+        &8- &7防守方
+            &7部落: {defender}
+            &7击杀: {def-points}
+
+        &7结束时间:
+        &5~{time}
+
+      declaration:
+        normal: |
+          &4战争宣言:
+
+          &7进攻方: {attacker}
+          &7防守方: {defender}
+
+          &7结束时间:
+          &5~{time}
+
+        mutual:
+          defender: |
+            &4战争宣言:
+
+            &7进攻方: {attacker}
+            &7防守方: {defender}
+
+            &7若防守方投降:
+            &7赔偿金:&c ${tribute}
+
+            [T]&7接受: &8/&3Wars declare {input} &8[&8CLICK&8][H]&7点击接受该战争宣言.[/H][C]Wars declare {input}[/C][/T]
+            [T]&7拒绝: &8/&3Wars deny &8[&8CLICK&8][H]&7点击拒绝该战争宣言.[/H][C]Wars deny[/C][/T]
+
+          attacker: |
+            &4战争宣言:
+
+            &7进攻方: {attacker}
+            &7防守方: {defender}
+
+            &7若防守方投降:
+            &7赔偿金:&c ${tribute}
+
+            &c防守方暂未接受
+            &c该战争宣言.

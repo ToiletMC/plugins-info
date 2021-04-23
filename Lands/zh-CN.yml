@@ -39,7 +39,7 @@ general:
   land:
     title:
       land: '&f城镇领主：&3 %owner%&f.'
-      safezone: '&f安全区域，可以松一口气了'
+      admin: '&7This land belongs to the server.'
     default-area: 默认区域
   time:
     days: 天
@@ -50,11 +50,13 @@ general:
     online: '&a在线'
     offline: '&c离线'
   top:
-    title: '&f-----<- &5城镇排行 &8(&f总计:&b {total}&8) &f->-----'
-    entry: '&c#{pos} &a{land} &fBalance:&e ${value}'
-    next-page: '&fNext page: &8/&2Lands top {next}'
-    last-updated: '&f上一次更新: {time} &f前'
-    footer: '&f-----<- &5城镇排行 &8(&f总计:&b {total}&8) &f->-----'
+    entry:
+      balance: '&c#{pos} &a{land} &7Balance:&e ${value}'
+      members: '&c#{pos} &a{land} &7Members:&e {value}'
+      chunks: '&c#{pos} &a{land} &7Chunks:&e {value}'
+    hologram:
+      title: '&7-----------&6<<<<&7- &5Top 10 Lands &8(&7Total: {total}&8) &7-&6>>>>&7-----------'
+      footer: '&7-----------&6<<<<&7- &5Top 10 Lands &8(&7Total: {total}&8) &7-&6>>>>&7-----------'
   integration:
     dynmap:
       land:
@@ -182,6 +184,9 @@ general:
     object:
       enemy: '&cEnemy'
       ally: '&aAlly'
+    state:
+      preparation: '&aPreparation'
+      fight: '&cFight'
   teleportation:
     bossbar: 请稍后，马上就好！
   area:
@@ -272,8 +277,6 @@ help:
         admin[/SC][/T]'
       debug: '[T]&8/&3Lands debug &8- &f显示加载的数据统计[H]&7Click to copy.[/H][SC]lands
         debug[/SC][/T]'
-      safezone: '[T]&8/&3Lands safezone &8- &f配置安全区？[H]&7Click to copy.[/H][SC]lands
-        safezone[/SC][/T]'
       reload: '[T]&8/&3Lands reload &8- &f重载配置文件[H]&7Click to copy.[/H][SC]lands reload[/SC][/T]'
       about: '[T]&8/&3Lands about &8- &f显示有关插件的更多信息[H]&7Click to copy.[/H][SC]lands
         about[/SC][/T]'
@@ -306,43 +309,32 @@ help:
         leave[/SC][/T]'
       spawn: '[T]&8/&3Nations spawn &8- &7Capital spawn[H]&7Click to copy.[/H][SC]nations
         spawn[/SC][/T]'
+      rename: '[T]&8/&3Nations rename &8- &7Rename nation[H]&7Click to copy.[/H][SC]nations
+        rename[/SC][/T]'
+      setcapital: '[T]&8/&3Nations setcapital &8- &7Set capital[H]&7Click to copy.[/H][SC]nations
+        setcapital[/SC][/T]'
 message:
   world-not-exist: '&c您确定&4{world}&c是一个有效的世界名吗，&f拼错了?'
   world-invalid: '&c在世界{world}中这未被启用，需要管理员在配置中加入'
   feature-disabled: '&c此项特性已被管理员禁用，需要管理员在设置中开启'
   current-war: '&f不不不，您的城镇&2{land}&f目前已经卷入了一场战争，&f请在战争结束后重试'
   noaccess:
-    chunk: '&c您不能在{land}的区块中这样做'
     area: '&c您不能在{land}的{area}中这样做'
     land: '&c您不能在{land}中这样做'
     land-not-owner: '&c您不能在{land}中这样做，请回到您自己的城镇或创建城镇再试'
     claim: '&c您不能申领这个区块，这个区块神秘魔法保护着'
-    place: '&c您不能在{land}中放置方块'
-    break: '&c您不能在{land}中破坏方块'
-    ignite: '&c您不能在{land}中破坏方块'
-    enter: '&c您被{land}的{area}拒之门外，已传送回原位'
-    vehicle: '&c您不能在{land}乘坐交通工具'
-    fly: '&c您不能在{land}飞行'
-    edit: '&c您不能编辑{land}'
     banned: '&c您不能进入{land}的{area}，被封锁了？'
-    interact:
-      general: '&c{land}的方块不愿意和您互动'
-      door: '&c您不能在{land}开门'
-      mechanism: '&c您不能使用{land}的方块'
-      container: '&c您不能使用{land}的容器'
-      villager: '&c{land}的村民不愿意和您交易'
     combat:
-      animal: '&c请不要攻击{land}的生物，主人会很生气！'
-      pvp:
-        attacker: '&c您不能在{land}攻击其他玩家'
-        target: '&c您的目标在{land}不允许PVP，所以就不要打他们了'
-        ally: '&c您不能在这里攻击他，因为他是您同一城镇中的一员'
-        wilderness: '&c您不能攻击他，因为您在一个和谐的城镇'
-    position: '&c您不能在您当前位置对{land}这样做'
-    ender_pearl: '&cYou''re not allowed to use this item to teleport into the area&6
-      {area} &7of land&4 {land}&c.'
-    spawn: '&cYou''re not allowed to teleport to the spawn of land&4 {land}&c. &7They
-      can adjust their role settings to allow teleportation to their spawn for you.'
+      attacker: '&cYou''re not allowed to attack players here. &7This area belongs
+        to land&2 {land}&7.'
+      target: '&cYour target isn''t allowed to attack players here. &7You can''t fight
+        with them here. &7This area belongs to land&2 {land}&7.'
+      ally: '&cYou can''t attack this player in wilderness, because he is a member
+        in one of your lands. &7Arena fights can be done in your land by allowing
+        pvp in the role settings.'
+      wilderness: '&cYou can''t attack this player, because he''s in wilderness and
+        you''re standing in claimed land.'
+    wilderness: '&cYou''re not allowed to do this in the wilderness. &8Flag: {flag}'
   area:
     exists: '&c{land}中已经存在一个名为{area}的区域了，请不要重复'
     not-exist: '&c{land}中好像没有叫{area}的区域啊？'
@@ -353,11 +345,11 @@ message:
       disabled: '&c飞行模式已关闭，这里不让飞'
     enter:
       land: '#t#&2&l{land}{newline}&3{title}'
-      safezone: '#t#&2&l{land}{newline}{title}'
       pvp-warning: '#a#&c进入PVP区域'
+      admin: '#t#&2&l{land}[newline]{title}'
     leave:
       land: '#t#&2&l啊！荒野{newline}&f感受野性'
-      safezone: '#t#&2&l啊！荒野{newline}&f感受野性'
+      admin: '#t#&2&lWilderness[newline]&7Feel the wild'
   claimblock:
     dropped: '&c一些认领方块掉到了地上……您的背包没有空间啦'
     success: '&f您获得了&3 {blocks} &f个认领方块，放置于区块中以划分区域'
@@ -408,6 +400,41 @@ message:
     corrected: '&f原始传送点不安全，传送移位到安全位置。'
     cmd: '&cYou can''t use any commands while beeing teleported. &7Please wait another&5
       {sec} seconds &7until the teleportation has been finished.'
+  flags:
+    block_place: '&cYou''re not allowed to place blocks here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    block_break: '&cYou''re not allowed to break blocks here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    block_ignite: '&cYou''re not allowed to ignite blocks here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    interact_general: '&cYou''re not allowed to interact here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    interact_door: '&cYou''re not allowed to open doors here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    interact_mechanism: '&cYou''re not allowed to use mechanisms here (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_container: '&cYou''re not allowed to open containers here (&cArea:&4
+      {area} &cLand:&4 {land}&c). &8Flag: {flag}'
+    interact_villager: '&cYou''re not allowed to trade with villagers here (&cArea:&4
+      {area} &cLand:&4 {land}&c). &8Flag: {flag}'
+    fly: '&cYou''re not allowed to fly here (&cArea:&4 {area} &cLand:&4 {land}&c).
+      &8Flag: {flag}'
+    spawn_teleport: '&cYou''re not allowed to teleport to the spawn of land&4 {land}&c.
+      &7They can adjust their role settings to allow teleportation to their spawn
+      for you. &8Flag: {flag}'
+    land_enter: '&cYou''re not allowed to enter the area&4 {area} &cof land&4 {land}&c
+      (&cArea:&4 {area} &cLand:&4 {land}&c). &7You were teleported to your previous
+      location. &8Flag: {flag}'
+    vehicle_use: '&cYou''re not allowed to use vehicles here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    item_pickup: '&cYou''re not allowed to pickup items here (&cArea:&4 {area} &cLand:&4
+      {land}&c). &8Flag: {flag}'
+    ender_pearl: '&cYou''re not allowed to use this item to teleport into the area&6
+      {area} &7of land&4 {land}&c. &8Flag: {flag}'
+    attack_animal: '&cYou''re not allowed to attack animals here (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &8Flag: {flag}'
+    attack_monster: '&cYou''re not allowed to attack monsters here (&cArea:&4 {area}
+      &cLand:&4 {land}&c). &7They also won''t be able to attack you. &8Flag: {flag}'
 command:
   general:
     no-permission: '&c除非您有{permission}权限，不然没办法这样做'
@@ -478,7 +505,6 @@ command:
     area:
       conflicts: '&c发现{conflicts}与已经分配给{areas}的土地有冲突， 使用/Lands selection assgin {area}
         confirm 确认区域覆盖范围。'
-      assigned: '&f已成功分配{chunks}区块给{area}'
     expand:
       enabled: '&f已成功将您框选的区域扩展到所有Y轴'
       disabled: '&f您当前框选的区域不再扩展到所有Y轴'
@@ -603,6 +629,10 @@ command:
     land:
       success: '&f成功同意来自{land}的邀请'
       broadcast: '&2{land} &f| {player}现在是城镇的一员了'
+    war: '&cYou currently can''t join land&4 {land}&c, because it is engaged in a
+      war. &7Try again when their war is over.'
+    max-members: '&cYou currently can''t join land&4 {land}&c. &7They reached their
+      maximum of&3 {members} &7members in their land.'
   setowner:
     max-lands: '&c{player}不能再造日不落帝国神话，他拥有的城镇已达{max}上限'
     confirm: '&c请确认您要将{land}的领主权力移交至{player}，使用/Lands setowner {player} confirm来确认'
@@ -616,8 +646,9 @@ command:
     not-trusted: '&c妈妈没回来谁来也不开，未被{land}信任，传送被拒'
     success: '&fSuccessfully teleported to X:&3 {x} &fZ:&3 {z} &fClaimed: {claimed}'
   setspawn:
-    force-land: '&c您只能在自己的城镇中这样做，先前往{land}吧'
     success: '#t#&7Spawnpoint set[newline]&7Cost:&c ${cost}'
+    wilderness: '&cYou can only set the land spawn on your land. &7You either need
+      to move up or down into your land&2 {land}&7.'
   spawn:
     not-exist: '&c似乎……{land}还没有出生点，使用/Land setspawn设置一个吧'
     not-allowed: '&c您不被允许传送至{land}出生点，要有传送权限'
@@ -632,6 +663,8 @@ command:
     searching: '#t#&6Searching Destination{newline}&eWaiting for Teleportation to
       start..'
     success: '&f随机传送成功，花费：${cost}T'
+    perm: '&cYou''re not allowed to use random teleportation in the world&4 {world}&c.
+      &8You''re missing the permission {perm} for this world.'
   deposit:
     number: '&f错误，您需要声明金额，请使用/Lands deposit &8<&3金额&8>'
     success: '&f成功在{land}的城镇银行存入{cost}T，现在银行余额为{bank}T'
@@ -683,6 +716,13 @@ command:
         &8Tax:&c ${tax}
         &8Players:&7 {players}
       &7---------<- &5&lArea View &r&7->---------
+    y-lock:
+      enabled: '&cToggled y-lock mode: &7The land borders will no longer follow your
+        position up and downwards.'
+      disabled: '&aToggled y-lock mode: &7The land borders will follow your position
+        up and downwards.'
+    y-level: '&7Your current position is wilderness, but this chunk is already claimed
+      by land&2 {land} &7at a different y-level.'
   taxes:
     none: '&f您似乎没有将要缴纳的税款'
     upcoming:
@@ -814,6 +854,18 @@ command:
   map:
     header: '&7-<------------<- &6Lands Map &7->------------>-[newline]'
     footer: '[newline]&7-<------------<- &6Lands Map &7->------------>-'
+  top:
+    mode: '&cYour input&4 {input} &cisn''t a valid sort mode. &7Valid sort modes:
+      {modes}'
+    title: '[NoPrefix][T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Click
+      here to view the previous page.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands
+      top {mode} {next}[/C][H]&7Click here to view the previous page.[/H][/T]'
+    footer: |
+      [NoPrefix]
+      &7Click on the arrows below to navigate.
+      &7Sort by [T]&7Balance &8[CLICK],[H]&7Click to sort by land bank balance.[/H][C]lands top balance[/C][/T] [T]&7Chunks &8[CLICK],[H]&7Click to sort by land chunks amount (size).[/H][C]lands top chunks[/C][/T] [T]&7Members &8[CLICK][H]&7Click to sort by land members amount.[/H][C]lands top members[/C][/T]
+      &7Total lands: {total} &8| &7Last updated: {time} &7ago.
+      [T]&7-----------&6<<<<&7-[C]lands top {mode} {previous}[/C][H]&7Click here to view the previous page.[/H][/T] &5Top Lands [T]&7-&6>>>>&7-----------[C]lands top {mode} {next}[/C][H]&7Click here to view the previous page.[/H][/T]
 list:
   swear-words: []
 wars:
@@ -823,6 +875,8 @@ wars:
         wait until a minimum of&3 {defenders} &fdefenders join.'
       general: '&cYou''re not allowed to do this in the land&4 {land}&c. &7You''re
         currently engaged in a war against this land.'
+      wilderness: '&cYou''re not allowed to do this in the wilderness while being
+        engaged in a war. &8Flag: {flag} &8Bypass: {bypass}'
     start:
       broadcast: '&fThe war between {attacker} &fand {defender} &fstarted. It will
         be over in&5 {time}&f.'
@@ -841,16 +895,27 @@ wars:
         &fto their enemy {enemy}&f.'
       draw: '&fThe war between {attacker} &fand {defender} &fended in a draw. It took&5
         {time}&f.'
-      won: |
-        &aThe War is over:
-        &7The attackers &8({team}&8) &7won.
+      won:
+        attackers: |
+          &aThe War is over:
+          &7The attackers &8({team}&8) &7won.
 
-        &8- &7Stats
-            &7Attacker kills:&3 {att-points}
-            &7Defender kills:&3 {def-points}
+          &8- &7Stats
+              &7Attacker kills:&3 {att-points}
+              &7Defender kills:&3 {def-points}
 
-        &7The war took:
-        &5~{time}
+              &7The war took:
+              &5~{time}
+        defenders: |
+          &aThe War is over:
+          &7The defenders &8({team}&8) &7won.
+
+          &8- &7Stats
+              &7Attacker kills:&3 {att-points}
+              &7Defender kills:&3 {def-points}
+
+              &7The war took:
+              &5~{time}
     war-shield:
       set: '&fThe new war shield for {object} &fwill be active for&5 {time}&f.'
     kill:
@@ -977,12 +1042,18 @@ nations:
           [T]&7Create your own nation: &8/&3Nations create[H]&7Click to copy.[/H][SC]nations create[/SC][/T]
       noaccess: '&cYou''re not allowed to do this for nation&4 {nation}&c. &8Flag:
         {flag} &8Bypass: {bypass}'
+      not-trusted: '&cThe land&4 {land} &cisn''t a member of your nation&4 {nation}&c.'
     create:
       already: '&cYour land&4 {land} &cis already part of the nation&4 {nation}&c.
         &7Your land needs to leave it first by executing &8/&3Nations leave&7.'
       success: '&7You successfully created the nation&9 {nation} &7with the land&2
         {land} &7as the capital. [T]&7Click here to open the menu.[H]&7Open the menu.[/H][C]nations
         menu[/C][/T]'
+      war: '&cYou can''t create a nation with land&4 {land} &cas the capital while
+        it is engaged in a war against&4 {object}&c. &7Please try again after the
+        war is over.'
+      level: '&cYou currently can''t create a nation. &7Your land&2 {land} &7needs
+        to be at least level&3 {level} &8(&7current: {current}&8)&7.'
     trust:
       already: '&cThe land&4 {land} &cis already part of the nation&4 {nation}&c.
         &7They need to leave it first by using &8/&3Nations leave&7.'
@@ -990,6 +1061,11 @@ nations:
         They can accept the invite by executing &8/&3Nations accept {nation}&7.'
       added: '&7You successfully added your land&2 {land} &7as a member of your nation&9
         {nation}&7.'
+      target: |
+        &7Nation&9 {nation} &7invited your land&2 {land} &7to join them.
+
+         [T]&2Accept &8[&8CLICK&8][H]&7Click here to accept this invite.[/H][C]nations accept {nation}[/C][/T]
+         [T]&cDeny &8[&8CLICK&8][H]&7Click here to deny this invite.[/H][C]nations deny {nation}[/C][/T]
     accept:
       war: '&cYou can''t join this nation right now. &7Nation&9 {nation} &7is currently
         engaged in a war. Their war will be over in&5 {time}&7.'
@@ -997,7 +1073,7 @@ nations:
         &7They can invite your land by executing &8/&3Nations trust&7.'
       already: '&cYour land&4 {land} &cis already part of nation&4 {nation}&c. &7You
         need to leave it first by executing &8/&3Nations leave&7.'
-      success: '&7You successfully accepted the invite and joined nation&9 {nation}&7.'
+      broadcast: '&7Land&2 {land} &7is now a member of our nation&9 {nation}&7.'
     deny:
       success: '&7You successfully denied the invite from nation&9 {nation}&7.'
     untrust:
@@ -1022,3 +1098,15 @@ nations:
         &7Please confirm that you want to leave nation&9 {nation} &7with land&2 {land}&7.
 
           [T]&7Confirm: &8[CLICK][H]&7Click here to confirm this action.[/H][C]nations leave confirm[/C][/T]
+    rename:
+      success: '&7Successfully set the new name&3 {name} &7for this nation &8(&7Nation:&9
+        {nation}&8)&7. You paid&c ${cost}&7.'
+    setcapital:
+      confirm: |
+        &cPlease confirm that you want to set land&4 {land} &cas the new capital of the nation&4 {nation}&c.
+        &cYou may loose all administratoral rights for the nation.
+         [T]&aConfirm: &8[CLICK][H]&7Click here to confirm this action.[/H][C]nations setcapital {land} confirm[/C][/T]
+      success: '&7Successfully set the land&2 {land} &7as the new capital of nation&9
+        {nation}&7.'
+      level: '&cYou can''t set the land&4 {land} &cas the new capital of nation&4
+        {nation}&c. &7It needs to be at least level&3 {level} &8(&7current: {current}&8)&7.'
