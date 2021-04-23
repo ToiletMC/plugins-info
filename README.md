@@ -16,14 +16,14 @@
 ## 名词备忘录
 
 防止名词翻译起冲突，现确定一些名词的译法。
-- Owner：领主
+- Owner：所有者
 - Land：城镇
 - Wilderness：荒野
 - Area：区域
-- Visitor：访客
-- Entry：成员
+- Visitor：游客
+- Member：成员
 - Selection：框选
-- Claim：申领
-- Unclaim：释放
-- Nation：联盟
+- Claim：占领
+- Unclaim：解除占领
+- Nation：联盟（盟友）
 

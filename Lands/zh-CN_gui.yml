@@ -82,7 +82,7 @@ general:
   previous: '&8上一个'
   offline: '&c离线'
   role:
-    owner: '&4领主'
+    owner: '&4所有者'
     admin: '&c管理员'
     member: '&e成员'
     visitor: '&7游客'
@@ -96,22 +96,23 @@ general:
     attackers: '&c攻击者'
     name:
       land: '&2城镇 '
-      nation: '&9Nation '
+      nation: '&9联盟 '
   all: '&a全部'
 physical-Item:
   claim-block:
-    name: '&申领区块'
+    name: '&占领区块'
     lore:
-    - '&7您可以在荒野放置此方块'
-    - '&7然后申领区块'
+    - '&7你可以在荒野放置此方块'
+    - '&7然后占领区块'
     - ' '
-    - '&7领主:&3 {owner}'
+    - '&7所有者:&3 {owner}'
     material: GRASS_BLOCK
   selection:
-    name: '&e申领工具'
+    name: '&e占领工具'
     lore:
-    - '&7使用此工具框选区块并申领：'
-    - '&8/&3Lands claim'
+    - '&7用这个工具框选一个对角'
+    - '&7区域后输入&8/&3Lands claim'
+    - '&7来占领一片土地'
     material: GOLDEN_HOE
 skull:
   role:
@@ -130,14 +131,14 @@ gui:
       lands:
         name: '&8> &2我的城镇'
         lore:
-        - '&7查看您的城镇'
+        - '&7查看你的城镇'
         - ' '
-        - '  &7包括您自己的'
-        - '  &7和您所加入的'
+        - '  &7包括你自己的'
+        - '  &7和你所加入的'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 11
       all-lands:
-        name: '&8> &b服务器操作'
+        name: '&8> &b全部城镇'
         lore:
         - '&7查看服务器中所有的城镇'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=
@@ -145,7 +146,7 @@ gui:
       invites:
         name: '&8> &6邀请'
         lore:
-        - '&7查看您收到的邀请'
+        - '&7查看你收到的邀请'
         material: WRITABLE_BOOK
         slot: 15
       close:
@@ -170,7 +171,7 @@ gui:
         - ' '
         - '&7+ 每个城镇最多&3 {chunks} &7个区块.'
         - ' '
-        - '&7+ 在您所属的每个城镇,您可以贡献 &3{support-chunks} &7个区块'
+        - '&7+ 在你所属的每个城镇,你可以贡献 &3{support-chunks} &7个区块'
         - ' '
         - '&7+ 最多可以加入&3 {lands} &7个城镇.'
         - ' '
@@ -179,7 +180,7 @@ gui:
         material: PLAYER_HEAD
         slot: 17
   player_lands:
-    title: '&0您的城镇'
+    title: '&0你的城镇'
     size: 27
     s: {}
     f:
@@ -208,9 +209,9 @@ gui:
       object:
         name: '&2{land}'
         lore:
-        - '&7您是这个城镇的一员.'
+        - '&7你是这个城镇的一员.'
         - ' '
-        - '&7区块:&3 {chunks} &7/&c {max-chunks}'
+        - '&7区块数量:&3 {chunks} &7/&c {max-chunks}'
         - ' '
         - '&9右键查看城镇信息'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFiNDNiOGMzZDM0ZjEyNWU1YTNmOGI5MmNkNDNkZmQxNGM2MjQwMmMzMzI5ODQ2MWQ0ZDRkN2NlMmQzYWVhIn19fQ==
@@ -219,9 +220,9 @@ gui:
       own-land:
         name: '&2{land}'
         lore:
-        - '&7您拥有这个城镇.'
+        - '&7你拥有这个城镇.'
         - ' '
-        - '&7区域:&3 {chunks} &7/&c {max-chunks}'
+        - '&7区块数量:&3 {chunks} &7/&c {max-chunks}'
         - ' '
         - '&9右键查看城镇信息'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
@@ -233,7 +234,7 @@ gui:
         - '&8- &7创造自己的城镇:'
         - '  &8/&3Lands create &8<&3城镇名称&8>'
         - ' '
-        - '&8- &7让好朋友邀请您:'
+        - '&8- &7让好朋友邀请你:'
         - '  &8/&3Lands trust {player}'
         material: OAK_SIGN
         from: 10
@@ -254,9 +255,10 @@ gui:
       information:
         name: '&6城镇信息'
         lore:
-        - '&7在这里您可以查看'
-        - '&7一些关于城镇的详细信息'
-        - '&7记录城镇发生的所有事情'
+        - '&7这里记录一些关于城镇的信息，'
+        - '&7也可点击此处前往城镇传送点。'
+        - ' '
+        - '&7点击传送'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       invites:
@@ -264,33 +266,35 @@ gui:
         lore:
         - ' '
         - '&7撤消已发送的邀请'
-        - '&7或查看一些关于他们的信息'
+        - '&7或查看相关信息'
         material: WRITABLE_BOOK
         slot: 15
       management:
         name: '&8> &6管理'
         lore:
-        - '&7管理您的城镇.'
-        - '&7您可以信任玩家, 设置角色,'
-        - '&7编辑城镇设置以及税收.'
+        - '&7在这里管理你的城镇，'
+        - '&7你可以信任玩家，设置角色，'
+        - '&7编辑城镇设置以及税收。'
+        - '&7也可用于前往城镇传送点'
+        - ''
+        - '&7点击传送.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       various:
-        name: '&8> &6城镇名和进入消息'
+        name: '&8> &6其他设置'
         lore:
-        - '&7重命名城镇或更改加入消息'
+        - '&7修改城镇名，'
+        - '&7设置进入消息。'
         material: BEACON
         slot: 35
       trusted:
-        name: '&8> &6Trusted Players'
+        name: '&8> &6已加入的玩家'
         lore:
-        - '&7Get a list of all trusted players,'
-        - '&7no matter in which areas they''re'
-        - '&7trusted.'
+        - '&7展示所有已加入的玩家,'
+        - '&7不论他们在哪个区域。'
         - ' '
-        - '&bSHIFT + LEFT CLICK'
-        - '&7Manage banned players'
-        - '&7of the whole land.'
+        - '&bSHIFT + 鼠标左键'
+        - '&7可管理城镇中已被封禁的玩家'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 14
     f:
@@ -303,7 +307,7 @@ gui:
       roles:
         name: '&8> &6角色'
         lore:
-        - '&7查看{area}中的角色'
+        - '&7查看或编辑{area}中的角色'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
@@ -316,10 +320,10 @@ gui:
         name: '&8> &6区域'
         lore:
         - '&7查看城镇中的所有区域'
-        - '&7您也可以创建新的区域'
+        - '&7你也可以创建新的区域'
         - ' '
-        - '&7区域:&3 {areas} &7/&c {max-areas}'
-        - '&7Claims:&3 {chunks} &7/&c {max-chunks}'
+        - '&7区域数量:&3 {areas} &7/&c {max-areas}'
+        - '&7区块数量:&3 {chunks} &7/&c {max-chunks}'
         material: OAK_FENCE
         slot: 13
       inbox:
@@ -335,27 +339,27 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 37
       stats:
-        name: '&8> &6Statistics'
+        name: '&8> &6统计'
         lore:
-        - '&7Location: {0}, x={1}, z={2}'
+        - '&7坐标: {0}, x={1}, z={2}'
         - ' '
-        - '&7Nation: {3}'
-        - '&7Claims: {4} / {5}'
-        - '&7Members: {6} / {7}'
+        - '&7联盟: {3}'
+        - '&7占领区块数: {4} / {5}'
+        - '&7城镇成员数: {6} / {7}'
         - ' '
-        - '&7Level: {8}'
-        - '&7Click for more information.'
+        - '&7等级: {8}'
+        - '&7单击查看更多信息。'
         - ' '
-        - '&7Economy'
-        - '&8- &7Land'
-        - '  &7Balance: ${9}'
-        - '  &7Next claim cost: ${10}'
-        - '  &7Upkeep of&c ${11} &7in:'
+        - '&7经济'
+        - '&8- &7城镇'
+        - '  &7马桶币: {9}'
+        - '  &7下一个区块占领花费: {10}T'
+        - '  &7物业费&c {11}T &7剩余:'
         - '  &7{12}'
         - ' '
-        - '&8- &4You'
-        - '  &7Balance: ${13}'
-        - '  &7Taxes of&c ${14} &7in:'
+        - '&8- &4个人'
+        - '  &7马桶币: {13}T'
+        - '  &7需缴税&c {14}T &7剩余:'
         - '  &7{15}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
         slot: 17
@@ -374,22 +378,20 @@ gui:
         to: 30
     a:
       failure_teleport_permission:
-        name: '&4Denied: &cPermission'
+        name: '&4拒绝: &c无权限'
         lore:
-        - '&cYou''re not allowed to'
-        - '&cteleport to any land spawn.'
+        - '&c你无法传送到任何城镇'
         - ' '
         - '&8Permission:'
         - '&8{permission}'
       failure_no-spawn:
-        name: '&4Failure: &cNo Spawn set'
+        name: '&4失败: &c找不到传送点'
         lore:
-        - '&7This land has no spawn'
-        - '&7set yet. They need to'
-        - '&7set a land spawn first:'
+        - '&7这个城镇没有设置任何传送点，'
+        - '&7需要先设置一个传送点:'
         - ' '
-        - '&7Execute &8/&3Lands setspawn'
-        - '&7to set the lands spawn.'
+        - '&7使用 &8/&3Lands setspawn'
+        - '&7可以设置城镇传送点。'
   land_areas:
     title: '&0区域'
     size: 36
@@ -400,7 +402,7 @@ gui:
         lore:
         - '&7创建一个新的区域'
         - ' '
-        - '&7剩余:&3 {areas} &8/&c {max}'
+        - '&7可用:&3 {areas} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         slot: 32
       delete:
@@ -435,7 +437,7 @@ gui:
       object:
         name: '&6{area}'
         lore:
-        - '&7打开关于此区域的菜单'
+        - '&7打开该区域的菜单'
         material: OAK_FENCE
         from: 10
         to: 27
@@ -455,9 +457,9 @@ gui:
       failure_untrusted:
         name: '&4被拒绝: &c未被信任'
         lore:
-        - '&c您不能打开该区域的区域菜单'
+        - '&c你不能打开该区域的区域菜单'
         - ' '
-        - '&8- &7您需要被该区域信任'
+        - '&8- &7你需要被该区域信任'
         - '&8- &7联系城镇所有者帮助'
       failure_max-areas:
         name: '&4失败: &c区域已满'
@@ -492,7 +494,7 @@ gui:
       information:
         name: '&6信息'
         lore:
-        - '&7在这里，您可以：'
+        - '&7在这里，你可以：'
         - '&7查看区域信息、管理区域。'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
@@ -507,14 +509,14 @@ gui:
       management:
         name: '&6管理'
         lore:
-        - '&7在这里，您可以：'
+        - '&7在这里，你可以：'
         - '&7邀请玩家，编辑角色、税收、设定。'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
         name: '&8> &6城镇设定'
         lore:
-        - '&7在这里，您可以：'
+        - '&7在这里，你可以：'
         - '&7管理生物的自然生存等。'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
@@ -627,9 +629,9 @@ gui:
       no-invite:
         name: '&c没有任何邀请'
         lore:
-        - '&7您的城镇没有发出任何邀请'
+        - '&7你的城镇没有发出任何邀请'
         - ' '
-        - '&7您可以在成员菜单中发出邀请'
+        - '&7你可以在成员菜单中发出邀请'
         material: OAK_SIGN
         from: 10
         to: 27
@@ -682,7 +684,7 @@ gui:
       failure_noAccess:
         name: '&4错误: &b撤销失败'
         lore:
-        - '&c您不能撤销此区域的邀请'
+        - '&c你不能撤销此区域的邀请'
         - ' '
         - '&8- &7请联系城镇或区域管理员'
     p:
@@ -925,7 +927,7 @@ gui:
         - '&7已解锁: {unlocked}'
         - ' '
         - '&7是否允许当前角色'
-        - '&7在您的领地与村民进行交易?'
+        - '&7在你的领地与村民进行交易?'
         material: EMERALD
         from: 10
         to: 27
@@ -1042,7 +1044,7 @@ gui:
         - ' '
         - '&8- &7他们不可以编辑自己的角色'
         - ' '
-        - '&8- &7您应该把这个权限只给非常信赖的好朋友'
+        - '&8- &7你应该把这个权限只给非常信赖的好朋友'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         from: 10
         to: 27
@@ -1064,28 +1066,28 @@ gui:
         - ' '
         - '&7允许当前角色编辑税收吗?'
         - ' '
-        - '&8- &7您应该把这个权限只给非常信赖的好朋友'
+        - '&8- &7你应该把这个权限只给非常信赖的好朋友'
         material: GOLD_INGOT
         from: 10
         to: 27
       land_claim:
-        name: '&6申领区块'
+        name: '&6占领区块'
         lore:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色给城镇申领新的区块吗?'
+        - '&7允许当前角色给城镇占领新的区块吗?'
         material: IRON_SHOVEL
         from: 10
         to: 27
       land_claim_border:
-        name: '&6在边界申领区块'
+        name: '&6在边界占领区块'
         lore:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色直接在您的'
-        - '&7边界为他们的城镇申领新区块？'
+        - '&7允许当前角色直接在你的'
+        - '&7边界为他们的城镇占领新区块？'
         material: IRON_BARS
         from: 10
         to: 27
@@ -1229,16 +1231,16 @@ gui:
       failure_permission:
         name: '&4错误: &c没有权限'
         lore:
-        - '&7您不能编辑这个设置'
+        - '&7你不能编辑这个设置'
       failure_priority:
         name: '&4错误: &c角色越权'
         lore:
-        - '&7您不能编辑这个角色'
-        - '&7它的优先级比您大.'
+        - '&7你不能编辑这个角色'
+        - '&7它的优先级比你大.'
       failure_access:
         name: '&4错误: &c拒绝访问'
         lore:
-        - '&7您不能在这里编辑这个设置'
+        - '&7你不能在这里编辑这个设置'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1295,7 +1297,7 @@ gui:
         - ' '
         - '&7是否允许TNT爆炸破坏方块？'
         - ' '
-        - '&8- &c注意: &7启用 → 别人可以用TNT破坏您的领地边边'
+        - '&8- &c注意: &7启用 → 别人可以用TNT破坏你的领地边边'
         material: TNT
         from: 10
         to: 18
@@ -1307,7 +1309,7 @@ gui:
         - ' '
         - '&7是否允许荒郊野外的活塞推动？'
         - ' '
-        - '&8- &c注意: &7启用 → 外面的活塞可以推方块到您的城镇'
+        - '&8- &c注意: &7启用 → 外面的活塞可以推方块到你的城镇'
         material: PISTON
         from: 10
         to: 18
@@ -1319,7 +1321,7 @@ gui:
         - ' '
         - '&7是否允许荒郊野外的水流进入领地？'
         - ' '
-        - '&8- &c注意: &7启用 → 外面的水可以流入您的城镇'
+        - '&8- &c注意: &7启用 → 外面的水可以流入你的城镇'
         material: WATER_BUCKET
         from: 10
         to: 18
@@ -1406,15 +1408,15 @@ gui:
       failure_permission:
         name: '&4失败: &c权限不足'
         lore:
-        - '&7您不能编辑此设定'
+        - '&7你不能编辑此设定'
       failure_priority:
         name: '&4失败: &c优先级'
         lore:
-        - '&7此角色比您拥有更高的优先级'
+        - '&7此角色比你拥有更高的优先级'
       failure_access:
         name: '&4失败: &c禁止访问'
         lore:
-        - '&7请让城镇的管理员允许您这么做'
+        - '&7请让城镇的管理员允许你这么做'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -1487,7 +1489,7 @@ gui:
         lore:
         - ' '
         - '&7In&5 {time} &7your land'
-        - '&7will receive&a ${revenue} &7as taxes'
+        - '&7will receive&a {revenue}T &7as taxes'
         - '&7from the trusted members in area.'
         - ' '
         - '&8- &7Players are paying'
@@ -1496,11 +1498,11 @@ gui:
         material: GOLD_INGOT
         slot: 14
       tax_nation:
-        name: '&7Tax:&c ${tax}'
+        name: '&7Tax:&c {tax}T'
         lore:
         - ' '
         - '&7In&5 {time} &7your nation'
-        - '&7will receive&a ${revenue} &7as taxes'
+        - '&7will receive&a {revenue}T &7as taxes'
         - '&7from the lands in this nation.'
         - ' '
         - '&7This value sets the tax'
@@ -1623,7 +1625,7 @@ gui:
         lore:
         - '&7这里没有任何邀请 :('
         - ' '
-        - '&8- &7让您的朋友邀请您：'
+        - '&8- &7让你的朋友邀请你：'
         - '  &8/&3Lands trust {player}'
         material: OAK_SIGN
         from: 10
@@ -1657,7 +1659,7 @@ gui:
         lore:
         - '&7Accept this invite.'
         - ' '
-        - '&7Tax value:&c ${tax}'
+        - '&7Tax value:&c {tax}T'
         material: LIME_STAINED_GLASS_PANE
         from: 10
         to: 13
@@ -1666,7 +1668,7 @@ gui:
         lore:
         - '&7Deny this invite.'
         - ' '
-        - '&7Tax value:&c ${tax}'
+        - '&7Tax value:&c {tax}T'
         material: RED_STAINED_GLASS_PANE
         from: 15
         to: 18
@@ -1894,7 +1896,7 @@ gui:
       toggle-allowed:
         name: '&6仅展示公开的城镇？'
         lore:
-        - '&7仅显示您可以传送的城镇？'
+        - '&7仅显示你可以传送的城镇？'
         - ' '
         - '&7单击此处切换此设置'
         - '&7筛选器: {only-allowed}'
@@ -1967,7 +1969,7 @@ gui:
         - '&cYou can''t afford to'
         - '&cteleport to this land spawn.'
         - ' '
-        - '&7You need&c ${costs}&7.'
+        - '&7You need&c {costs}T&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2034,7 +2036,7 @@ gui:
         material: IRON_SWORD
         slot: 15
       tribute_attacker:
-        name: '&8> &6Tribute:&c ${tribute}'
+        name: '&8> &6Tribute:&c {tribute}T'
         lore:
         - '&7Change the tribute'
         - '&7value for this war.'
@@ -2045,7 +2047,7 @@ gui:
         - '&9右键'
         - '&7If a attacker wants to'
         - '&7surrender, they''ll need'
-        - '&7to pay&c ${tribute-att} &7to'
+        - '&7to pay&c {tribute-att}T &7to'
         - '&7the defenders.'
         - ' '
         - '&8- &7If the value equals 0,'
@@ -2054,12 +2056,12 @@ gui:
         material: GOLD_INGOT
         slot: 17
       tribute_defender:
-        name: '&8> &6Surrender:&c ${tribute}'
+        name: '&8> &6Surrender:&c {tribute}T'
         lore:
         - '&7Click here to surrender'
         - '&7in this war.'
         - '&cA surrenderer will need to'
-        - '&cpay the tribute value of&c ${tribute}'
+        - '&cpay the tribute value of&c {tribute}T'
         - '&cin order to surrender.'
         - ' '
         - '&8- &7If the value equals 0:'
@@ -2081,14 +2083,14 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 9
       tribute_attacker_mutual:
-        name: '&8> &6Tribute:&c ${tribute}'
+        name: '&8> &6Tribute:&c {tribute}T'
         lore:
         - '&7Surrender as a attacker:'
-        - '&7Attackers need to pay&c ${tribute-att}'
+        - '&7Attackers need to pay&c {tribute-att}T'
         - '&7to the defenders.'
         - ' '
         - '&7If the defenders surrender:'
-        - '&7Defenders need to pay&c ${tribute}'
+        - '&7Defenders need to pay&c {tribute}T'
         - '&7to you. &7If the value equals 0, the'
         - '&7defenders wont be able to surrender.'
         material: GOLD_INGOT
@@ -2125,7 +2127,7 @@ gui:
         lore:
         - '&7You &8({object}&8) &7have'
         - '&7not enough money to pay the'
-        - '&7tribute of&c ${tribute}&7.'
+        - '&7tribute of&c {tribute}T&7.'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2182,9 +2184,9 @@ gui:
     size: 27
     s:
       plus-1:
-        name: '&aAdd $1'
+        name: '&aAdd 1T'
         lore:
-        - '&7Add $1 to the'
+        - '&7Add 1T to the'
         - '&7tribute value.'
         material: GLOWSTONE_DUST
         slot: 11
@@ -2192,45 +2194,45 @@ gui:
         data:
           value: 1.0
       plus-2:
-        name: '&aAdd $100'
+        name: '&aAdd 100T'
         lore:
-        - '&7Add $100 to the'
+        - '&7Add 100T to the'
         - '&7tribute value.'
         material: GLOWSTONE_DUST
         slot: 12
         data:
           value: 100.0
       plus-3:
-        name: '&aAdd $1000'
+        name: '&aAdd 1000T'
         lore:
-        - '&7Add $1000 to the'
+        - '&7Add 1000T to the'
         - '&7tribute value.'
         material: GLOWSTONE_DUST
         slot: 13
         data:
           value: 1000.0
       minus-3:
-        name: '&cRemove $1000'
+        name: '&cRemove 1000T'
         lore:
-        - '&7Remove $1000 from'
+        - '&7Remove 1000T from'
         - '&7the tribute value.'
         material: REDSTONE
         slot: 15
         data:
           value: 1000.0
       minus-2:
-        name: '&cRemove $100'
+        name: '&cRemove 100T'
         lore:
-        - '&7Remove $100 from'
+        - '&7Remove 100T from'
         - '&7the tribute value.'
         material: REDSTONE
         slot: 16
         data:
           value: 100.0
       minus-1:
-        name: '&cRemove $1'
+        name: '&cRemove 1T'
         lore:
-        - '&7Remove $1 from'
+        - '&7Remove 1T from'
         - '&7the tribute value.'
         material: REDSTONE
         slot: 17
@@ -2238,14 +2240,14 @@ gui:
           value: 1.0
     f:
       tribute:
-        name: '&7Tribute:&c ${tribute}'
+        name: '&7Tribute:&c {tribute}T'
         lore:
         - '&7The defending land will need to'
         - '&7to pay this value in order to'
         - '&7surrender.'
         - ' '
         - '&8- &7The maximum tribute for '
-        - '  &7this land is&3 ${max}&7.'
+        - '  &7this land is&3 {max}T&7.'
         - '  &7A server administrator can'
         - '  &7change that in the config.'
         - ' '
@@ -2478,14 +2480,14 @@ gui:
       failure_access:
         name: '&4c错误: &c拒绝访问'
         lore:
-        - '&7您不能编辑这个设置'
+        - '&7你不能编辑这个设置'
         - ' '
-        - '&7您需要得到领地主人的允许'
+        - '&7你需要得到领地主人的允许'
       failure_priority:
         name: '&4错误: &c角色越权'
         lore:
-        - '&7您不能编辑这个角色'
-        - '&7它的权利比您大；或者您只是一个成员'
+        - '&7你不能编辑这个角色'
+        - '&7它的权利比你大；或者你只是一个成员'
       failure_owner:
         name: '&cCan''t edit Owner'
         lore:
@@ -2739,12 +2741,12 @@ gui:
         - ' '
         - '&7Economy'
         - '&8- &7Nation'
-        - '  &7Balance: ${6}'
-        - '  &7Nation pays&c ${7} &7upkeep'
+        - '  &7Balance: {6}T'
+        - '  &7Nation pays&c {7}T &7upkeep'
         - '  &7in {8}.'
         - ' '
         - '&8- &4Your land &8({9})'
-        - '  &7Upkeep of&c ${10} &7to the'
+        - '  &7Upkeep of&c {10}T &7to the'
         - '  &7nation in {11}.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
         slot: 17
