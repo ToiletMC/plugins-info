@@ -669,11 +669,8 @@ command:
     unsafe: '&c哎呀，传送点位置似乎不安全，使用/Lands setspawn来调整吧'
     success: '&7成功传送到城镇&2 {land} &7花费:&c {cost}T'
   wild:
-    no-location: '&cCouldnt find a safe location for you that matches the filter in
-      config. &8Please adjust your max and min distance settings and set the world
-      spawn (/setworldspawn).'
-    searching: '#t#&6Searching Destination{newline}&eWaiting for Teleportation to
-      start..'
+    no-location: '&c无法为您找到与配置中的过滤器匹配的安全位置。 &8请调整您的最大和最小距离设置并设置世界出生点  (/setworldspawn).'
+    searching: '#t#&6正在计算坐标{newline}&e请等待传送开始..'
     success: '&f随机传送成功，花费：{cost}T'
     perm: '&cYou''re not allowed to use random teleportation in the world&4 {world}&c.
       &8You''re missing the permission {perm} for this world.'

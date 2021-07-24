@@ -88,9 +88,9 @@ general:
     visitor: '&7游客'
   inbox-filter:
     all: '&a全部邮件'
-    members: '&e关于成员'
-    economy: '&c关于经济'
-    war: '&4关于战争'
+    members: '&e成员相关'
+    economy: '&c经济相关'
+    war: '&4战争相关'
   war:
     defenders: '&a捍卫者'
     attackers: '&c攻击者'
@@ -286,8 +286,8 @@ gui:
         name: '&8> &6管理'
         lore:
         - '&7在这里管理你的城镇，'
-        - '&7你可以信任玩家，设置角色，'
-        - '&7编辑城镇设置以及税收。'
+        - '&7你可以信任玩家，设置身份组，'
+        - '&7编辑城镇设置以及管理费。'
         - '&7也可用于前往城镇传送点'
         - ''
         - '&7点击传送.'
@@ -307,7 +307,7 @@ gui:
         - '&7不论他们在哪个区域。'
         - ' '
         - '&bSHIFT + 鼠标左键'
-        - '&7可管理城镇中已被封禁的玩家'
+        - '&7可管理城镇中已被禁止的玩家'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 14
     f:
@@ -318,15 +318,15 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
-        name: '&8> &6角色'
+        name: '&8> &6身份组'
         lore:
-        - '&7查看或编辑{area}中的角色'
+        - '&7查看或编辑{area}中的身份组'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
-        name: '&8> &6税收'
+        name: '&8> &6管理费'
         lore:
-        - '&7查看{area}中的税收'
+        - '&7查看{area}中的管理费'
         material: GOLD_INGOT
         slot: 33
       areas:
@@ -340,7 +340,7 @@ gui:
         material: OAK_FENCE
         slot: 13
       inbox:
-        name: '&8> &6收件箱 &8(&e{amount}&8)'
+        name: '&8> &6通知 &8(&e{amount}&8)'
         lore:
         - ' '
         - '{inbox}'
@@ -372,7 +372,7 @@ gui:
         - ' '
         - '&8- &4个人'
         - '  &7马桶币: {13}T'
-        - '  &7需缴税&c {14}T &7剩余:'
+        - '  &7管理费&c {14}T &7剩余:'
         - '  &7{15}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmNmYWZmYThjNmM3ZjYyNjIxNjgyZmU1NjcxMWRjM2I4OTQ0NjVmZGY3YTYyZjQzYjMxYTBkMzQwM2YzNGU3In19fQ==
         slot: 17
@@ -523,7 +523,7 @@ gui:
         name: '&6管理'
         lore:
         - '&7在这里，你可以：'
-        - '&7邀请玩家，编辑角色、税收、设定。'
+        - '&7邀请玩家，编辑身份组、管理费、设定。'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 29
       land-settings:
@@ -534,37 +534,36 @@ gui:
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         slot: 31
       roles:
-        name: '&8> &6角色'
+        name: '&8> &6身份组'
         lore:
-        - '&7查看区域中的角色'
+        - '&7查看区域中的身份组'
         - ' '
-        - '&8- &7全局角色将自动添加到该区域.'
+        - '&8- &7全局身份组将自动添加到该区域.'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 32
       taxes:
-        name: '&8> &6税收'
+        name: '&8> &6管理费'
         lore:
-        - '&7查看区域中的税收.'
+        - '&7查看区域中的管理费.'
         - ' '
-        - '&8- &7税额按区域计算.'
+        - '&8- &7管理费按区域计算.'
         material: GOLD_INGOT
         slot: 33
       various:
-        name: '&8> &6Various Settings'
+        name: '&8> &6其他设置'
         lore:
         - '&7Edit the area name'
         - '&7and description.'
         material: BEACON
         slot: 35
       trusted:
-        name: '&8> &6Trusted Players'
+        name: '&8> &6已加入的玩家'
         lore:
-        - '&7Get a list of all players, which'
-        - '&7are trusted in this specific area.'
+        - '&7展示所有已加入的玩家,'
+        - '&7仅和当前区域相关。'
         - ' '
-        - '&bSHIFT + LEFT CLICK'
-        - '&7Manage banned players'
-        - '&7of this area.'
+        - '&bSHIFT + 鼠标左键'
+        - '&7可管理区域中已被禁止的玩家'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
         slot: 13
     p:
@@ -642,7 +641,7 @@ gui:
       no-invite:
         name: '&c没有任何邀请'
         lore:
-        - '&7你的城镇没有发出任何邀请'
+        - '&7你没有发出任何邀请 :('
         - ' '
         - '&7你可以在成员菜单中发出邀请'
         material: OAK_SIGN
@@ -706,13 +705,13 @@ gui:
         from: 1
         to: 27
   area_roles:
-    title: '&0{area} &7- &8角色'
+    title: '&0{area} &7- &8身份组'
     size: 27
     l:
       object:
         name: '&7{role}'
         lore:
-        - '&7单击编辑该角色.'
+        - '&7单击编辑该身份组.'
         - ' '
         - '&bSHIFT + 左键'
         - '&7提升优先级'
@@ -745,17 +744,17 @@ gui:
         material: ARROW
         slot: 26
       create:
-        name: '&8> &a新建角色'
+        name: '&8> &a新建身份组'
         lore:
-        - '&7创造一个新角色'
+        - '&7创造一个新身份组'
         - ' '
-        - '&7可用角色:&3 {roles} &8/&c {max}'
+        - '&7可用身份组:&3 {roles} &8/&c {max}'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjA1NmJjMTI0NGZjZmY5OTM0NGYxMmFiYTQyYWMyM2ZlZTZlZjZlMzM1MWQyN2QyNzNjMTU3MjUzMWYifX19
         slot: 23
       delete:
-        name: '&c删除角色'
+        name: '&c删除身份组'
         lore:
-        - '&7删除此区域的一个角色'
+        - '&7删除此区域的一个身份组'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         slot: 24
     a:
@@ -862,7 +861,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7在这里破坏方块?'
         material: IRON_PICKAXE
         from: 10
@@ -873,7 +872,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7在这里放置方块?'
         material: OAK_PLANKS
         from: 10
@@ -884,7 +883,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7在这里点燃方块?'
         material: FLINT_AND_STEEL
         from: 10
@@ -895,7 +894,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7在这里使用音符盒什么的...?'
         material: STRING
         from: 10
@@ -906,7 +905,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7打开在这里的门?'
         material: IRON_DOOR
         from: 10
@@ -917,7 +916,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7打开这里的容器?'
         material: CHEST
         from: 10
@@ -928,7 +927,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7在这里使用红石?'
         material: REDSTONE
         from: 10
@@ -939,7 +938,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7在你的领地与村民进行交易?'
         material: EMERALD
         from: 10
@@ -950,7 +949,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7是否允许当前角色'
+        - '&7是否允许当前身份组'
         - '&7攻击玩家?'
         - ' '
         - '&8- Please note that due combat'
@@ -971,7 +970,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色攻击动物吗?'
+        - '&7允许当前身份组攻击动物吗?'
         material: BOW
         from: 10
         to: 27
@@ -981,7 +980,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色使用交通工具吗?'
+        - '&7允许当前身份组使用交通工具吗?'
         material: MINECART
         from: 10
         to: 27
@@ -991,7 +990,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色飞行吗?'
+        - '&7允许当前身份组飞行吗?'
         material: FEATHER
         from: 10
         to: 27
@@ -1001,7 +1000,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色进入这里吗?'
+        - '&7允许当前身份组进入这里吗?'
         material: OAK_FENCE_GATE
         from: 10
         to: 27
@@ -1011,7 +1010,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色框选区域并规划城镇吗?'
+        - '&7允许当前身份组框选区域并规划城镇吗?'
         material: OAK_FENCE
         from: 10
         to: 27
@@ -1021,7 +1020,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色直接邀请其他玩家加入吗?'
+        - '&7允许当前身份组直接邀请其他玩家加入吗?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkyZTMxZmZiNTljOTBhYjA4ZmM5ZGMxZmUyNjgwMjAzNWEzYTQ3YzQyZmVlNjM0MjNiY2RiNDI2MmVjYjliNiJ9fX0=
         from: 10
         to: 27
@@ -1031,9 +1030,9 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色踢出已加入的玩家?'
+        - '&7允许当前身份组踢出已加入的玩家?'
         - ' '
-        - '&8- &7他们无法踢出比自己等级高的角色'
+        - '&8- &7他们无法踢出比自己等级高的身份组'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTljZGI5YWYzOGNmNDFkYWE1M2JjOGNkYTc2NjVjNTA5NjMyZDE0ZTY3OGYwZjE5ZjI2M2Y0NmU1NDFkOGEzMCJ9fX0=
         from: 10
         to: 27
@@ -1043,19 +1042,19 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色编辑城镇设置吗?'
+        - '&7允许当前身份组编辑城镇设置吗?'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQ0OWI5MzE4ZTMzMTU4ZTY0YTQ2YWIwZGUxMjFjM2Q0MDAwMGUzMzMyYzE1NzQ5MzJiM2M4NDlkOGZhMGRjMiJ9fX0=
         from: 10
         to: 27
       setting_edit_role:
-        name: '&6允许编辑角色设置'
+        name: '&6允许编辑身份组设置'
         lore:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色编辑角色设置吗?'
+        - '&7允许当前身份组编辑身份组设置吗?'
         - ' '
-        - '&8- &7他们不可以编辑自己的角色'
+        - '&8- &7他们不可以编辑自己的身份组'
         - ' '
         - '&8- &7你应该把这个权限只给非常信赖的好朋友'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThiOGM2YTQ2ZDg3Y2Y4NmE1NWRmMjE0Y2Y4NGJmNDVjY2EyNWVkYjlhNjc2ZTk2MzY0ZGQ2YTZlZWEyMzViMyJ9fX0=
@@ -1067,17 +1066,17 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色挑起战争?'
+        - '&7允许当前身份组挑起战争?'
         material: IRON_SWORD
         from: 10
         to: 27
       setting_edit_taxes:
-        name: '&6编辑税收'
+        name: '&6编辑管理费'
         lore:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色编辑税收吗?'
+        - '&7允许当前身份组编辑管理费吗?'
         - ' '
         - '&8- &7你应该把这个权限只给非常信赖的好朋友'
         material: GOLD_INGOT
@@ -1089,7 +1088,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色给城镇占领新的区块吗?'
+        - '&7允许当前身份组给城镇占领新的区块吗?'
         material: IRON_SHOVEL
         from: 10
         to: 27
@@ -1099,7 +1098,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色直接在你的'
+        - '&7允许当前身份组直接在你的'
         - '&7边界为他们的城镇占领新区块？'
         material: IRON_BARS
         from: 10
@@ -1110,7 +1109,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色编辑传送点吗?'
+        - '&7允许当前身份组编辑传送点吗?'
         material: ENDER_EYE
         from: 10
         to: 27
@@ -1120,7 +1119,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色传送到这里吗?'
+        - '&7允许当前身份组传送到这里吗?'
         material: ENDER_PEARL
         from: 10
         to: 27
@@ -1130,7 +1129,7 @@ gui:
         - '&7状态: {enabled}'
         - '&7已解锁: {unlocked}'
         - ' '
-        - '&7允许当前角色从领地银行取钱吗?'
+        - '&7允许当前身份组从领地银行取钱吗?'
         - ' '
         - '&8- &7命令:'
         - '  &8/&3Lands withdraw'
@@ -1218,7 +1217,7 @@ gui:
         from: 10
         to: 27
       setting_edit_various:
-        name: '&6Edit various Settings'
+        name: '&6编辑其他设置'
         lore:
         - '&7Status: {enabled}'
         - '&7Unlocked: {unlocked}'
@@ -1257,9 +1256,9 @@ gui:
         lore:
         - '&7你不能编辑这个设置'
       failure_priority:
-        name: '&4错误: &c角色越权'
+        name: '&4错误: &c身份组越权'
         lore:
-        - '&7你不能编辑这个角色'
+        - '&7你不能编辑这个身份组'
         - '&7它的优先级比你大.'
       failure_access:
         name: '&4错误: &c拒绝访问'
@@ -1275,7 +1274,7 @@ gui:
         from: 29
         to: 36
   area_settings:
-    title: '&0{area} &0- 城镇设定'
+    title: '&0{area} &0- 区域设定'
     size: 27
     s: {}
     f:
@@ -1398,32 +1397,34 @@ gui:
         from: 10
         to: 18
       plant_growth:
-        name: '&6Plant Growth'
+        name: '&6植物生长 '
         lore:
-        - '&7Status: {enabled}'
-        - '&7Unlocked: {unlocked}'
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
         - ' '
-        - '&7Should plants be able to grow?'
+        - '&7是否允许植物生长?'
+        - '&8- &c注意: &7没有什么需要注意的，就是字面意思。'
         material: VINE
         from: 10
         to: 18
       snow_melt:
-        name: '&6Snow Melt'
+        name: '&6雪融化'
         lore:
-        - '&7Status: {enabled}'
-        - '&7Unlocked: {unlocked}'
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
         - ' '
-        - '&7Should snow and ice melt?'
+        - '&7是否允许雪融化?'
+        - '&8- &c注意: &7启用 → 雪会自然融化'
         material: SNOWBALL
         from: 10
         to: 27
       general:
         name: '&6{flag}'
         lore:
-        - '&7Status: {enabled}'
-        - '&7Unlocked: {unlocked}'
+        - '&7状态: {enabled}'
+        - '&7已解锁: {unlocked}'
         - ' '
-        - '&7Description:'
+        - '&7描述:'
         - '{desc}'
         material: NAME_TAG
         from: 10
@@ -1436,7 +1437,7 @@ gui:
       failure_priority:
         name: '&4失败: &c优先级'
         lore:
-        - '&7此角色比你拥有更高的优先级'
+        - '&7此身份组比你拥有更高的优先级'
       failure_access:
         name: '&4失败: &c禁止访问'
         lore:
@@ -1451,7 +1452,7 @@ gui:
         from: 19
         to: 27
   taxes:
-    title: '&0{holder} &0- 税收'
+    title: '&0{holder} &0- 管理费'
     size: 27
     s:
       plus-1:
@@ -1509,7 +1510,7 @@ gui:
         material: RED_STAINED_GLASS_PANE
         slot: 19
       tax_area:
-        name: '&7税:&c {tax}T'
+        name: '&7管理费:&c {tax}T'
         lore:
         - ' '
         - '&7In&5 {time} &7your land'
@@ -1783,7 +1784,7 @@ gui:
     size: 27
     s:
       close:
-        name: '&cClose'
+        name: '&c关闭'
         lore:
         - ' '
         - '&8- &7再次开启使用： &8/&3Lands info'
@@ -1847,7 +1848,7 @@ gui:
         from: 1
         to: 27
   land_various:
-    title: '&0各种设定'
+    title: '&0其他设置'
     size: 27
     a:
       failure_noaccess:
@@ -2333,13 +2334,13 @@ gui:
       object:
         name: '&e{player}'
         lore:
-        - '&7当前角色: {role}'
+        - '&7当前身份组: {role}'
         - ' '
         - '&b单击'
-        - '&7▲ 提升角色'
+        - '&7▲ 提升身份组'
         - ' '
         - '&9右键'
-        - '&7▼ 降级角色'
+        - '&7▼ 降级身份组'
         - ' '
         - '&7查看更多信息:'
         - '&7鼠标中键'
@@ -2371,19 +2372,13 @@ gui:
         - '&8Permission: lands.members.NUMBER'
     f:
       toggle:
-        name: '&8> &6View only Area'
+        name: '&8> &6仅查看区域'
         lore:
-        - '&7Display only players'
-        - '&7which are trusted in'
-        - '&7this area&6 {area}&7?'
+        - '&7仅显示在该区域受信任的玩家 &6 {area}&7?'
         - ' '
-        - '&7If disabled: Displays'
-        - '&7players of the whole land.'
-        - '&7Also it allows you to'
-        - '&7trust / untrust players'
-        - '&7in the whole land.'
+        - '&7如果取消: 将会展示和城镇相关的所有成员'
         - ' '
-        - '&7当前页: {current}'
+        - '&7当前状态: {current}'
         material: HOPPER
         slot: 32
       trust:
@@ -2445,20 +2440,20 @@ gui:
       icon:
         name: '&8> &6图标'
         lore:
-        - '&7单击改变角色图标'
+        - '&7单击改变身份组图标'
         material: STONE
         slot: 14
       name:
         name: '&8> &6重命名'
         lore:
-        - '&7重命名此角色'
+        - '&7重命名此身份组'
         - '&7当前名称: {name}'
         material: NAME_TAG
         slot: 15
       apply:
         name: '&8> &6自动信任到新区域'
         lore:
-        - '&7是否自动信任此角色到新区域？'
+        - '&7是否自动信任此身份组到新区域？'
         - ' '
         - '&7当前状态: {apply}'
         material: OAK_FENCE
@@ -2467,19 +2462,19 @@ gui:
       information:
         name: '&6信息'
         lore:
-        - '&7查看有关角色的信息'
+        - '&7查看有关身份组的信息'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzU3NDcwMTBkODRhYTU2NDgzYjc1ZjYyNDNkOTRmMzRjNTM0NjAzNTg0YjJjYzY4YTQ1YmYzNjU4NDAxMDVmZCJ9fX0=
         slot: 11
       members:
-        name: '&8> &6角色成员'
+        name: '&8> &6身份组成员'
         lore:
-        - '&7查看拥有此角色的程艳'
+        - '&7查看拥有此身份组的程艳'
         material: PLAYER_HEAD
         slot: 13
       management_info:
         name: '&6管理'
         lore:
-        - '&7编辑有关角色的设定'
+        - '&7编辑有关身份组的设定'
         material: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=
         slot: 20
       settings:
@@ -2508,9 +2503,9 @@ gui:
         - ' '
         - '&7你需要得到领地主人的允许'
       failure_priority:
-        name: '&4错误: &c角色越权'
+        name: '&4错误: &c身份组越权'
         lore:
-        - '&7你不能编辑这个角色'
+        - '&7你不能编辑这个身份组'
         - '&7它的权利比你大；或者你只是一个成员'
       failure_owner:
         name: '&cCan''t edit Owner'
@@ -2591,90 +2586,80 @@ gui:
         from: 29
         to: 36
   area_various:
-    title: Various Settings
+    title: 其他设置
     size: 27
     f:
       name:
-        name: '&8> &6Name'
+        name: '&8> &6名称'
         lore:
-        - '&7Rename this area.'
+        - '&7重命名区域'
         - ' '
-        - '&7Current:'
+        - '&7当前:'
         - '{name}'
         material: NAME_TAG
         slot: 11
       description:
-        name: '&8> &6Description'
+        name: '&8> &6描述'
         lore:
-        - '&7Change the description of'
-        - '&7this area.'
+        - '&7改变区域描述'
         - ' '
-        - '&7Current:'
+        - '&7当前:'
         - '{description}'
         material: OAK_SIGN
         slot: 14
       icon:
-        name: '&8> &6Icon'
+        name: '&8> &6图标'
         lore:
-        - '&7Change the icon of'
-        - '&7this area.'
+        - '&7改变区域图标'
         - ' '
-        - '&7This helps you to search'
-        - '&7area in the areas menu.'
+        - '&7这有助于你在区域菜单中找到区域'
         material: OAK_FENCE
         slot: 17
       back:
-        name: '&cBack'
-        lore:
-        - '&7Go back to'
-        - '{back}&7.'
+        name: '&c返回'
+        lore: []
         material: RED_STAINED_GLASS_PANE
         slot: 19
     a:
       no-item:
-        name: '&cNo Item in Hand'
+        name: '&c空图标'
         lore:
-        - '&7You need to have an item'
-        - '&7in your main hand.'
+        - '&7请把图标拿在手中'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
         from: 1
         to: 27
   inbox:
-    title: '&8Inbox'
+    title: '&8通知'
     size: 36
     f:
       filter:
-        name: '&8> &6Filter by Type'
+        name: '&8> &6通知类别'
         lore:
-        - '&7Click here to cycle through'
-        - '&7message types.'
         - ' '
-        - '&7Current:&3 {type}'
+        - '&7分类:&3 {type}'
         material: HOPPER
         slot: 32
       page_previous:
-        name: '&9Previous Page'
+        name: '&9上一页'
         lore:
-        - '&7Go to previous page:&9 {previous}'
+        - '&7返回上一页:&9 {previous}'
         - ' '
-        - '&8- &7Current:&3 {current}'
+        - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 30
       page_next:
-        name: '&aNext Page'
+        name: '&a下一页'
         lore:
-        - '&7Go to next page:&9 {next}'
+        - '&7前往下一页:&9 {next}'
         - ' '
-        - '&8- &7Current:&3 {current}'
+        - '&8- &7当前:&3 {current}'
         material: ARROW
         slot: 35
       back:
-        name: '&cBack'
-        lore:
-        - '&7Go back to'
-        - '{back}&7.'
+        name: '&c返回'
+        lore: []
         material: RED_STAINED_GLASS_PANE
         slot: 28
     l:
@@ -2683,17 +2668,15 @@ gui:
         lore:
         - '{message}'
         - ' '
-        - '&7Click to remove.'
+        - '&7单击移除'
         material: PAPER
         from: 10
         to: 27
     a:
       failure_owner:
-        name: '&4Failure: &cNo Access'
+        name: '&4失败: &c无权限'
         lore:
-        - '&7You''re not allowed to do this.'
-        - '&7Only the owner is permitted to'
-        - '&7remove messages.'
+        - '&7请联系城镇管理员'
     p:
       placeholder_1:
         material: GRAY_STAINED_GLASS_PANE
@@ -2708,19 +2691,15 @@ gui:
     size: 36
     f:
       back:
-        name: '&cBack'
-        lore:
-        - '&7Go back to'
-        - '&e{back}&7.'
+        name: '返回'
+        lore: []
         material: RED_STAINED_GLASS_PANE
         slot: 28
       close:
-        name: '&cClose'
+        name: '&c关闭'
         lore:
-        - '&7Close this menu.'
         - ' '
-        - '&8- &7You can open it again'
-        - '  &7with &8/&3Nation menu&7.'
+        - '&8- &7再次开启使用 &8/&3Nation menu&7.'
         material: RED_STAINED_GLASS_PANE
         slot: 9
       war:
@@ -2938,7 +2917,7 @@ gui:
         to: 27
     f:
       toggle:
-        name: '&8> &6View only Area'
+        name: '&8> &6仅查看区域'
         lore:
         - '&7Display only players'
         - '&7which are banned in'
